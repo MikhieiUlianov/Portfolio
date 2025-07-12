@@ -1,5 +1,3 @@
-import "./sass/style.scss";
-
 import Contacts from "./components/Contacts/Contacts";
 import Menu from "./components/Menu/Menu";
 import Portfolio from "./components/Portfolio/Portfolio";
@@ -9,10 +7,11 @@ import About from "./components/About/About";
 import Resume from "./components/Resume/Resume";
 import SidePanel from "./components/Sidepanel/Sidepanel";
 import Skills from "./components/Skills/Skills";
+import "./sass/style.scss";
 
 function App() {
   return (
-    <main className="container">
+    <main>
       <SidePanel />
       <Menu />
       <Promo />
