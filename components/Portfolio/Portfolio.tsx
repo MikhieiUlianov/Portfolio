@@ -3,6 +3,7 @@ import classes from "./portfolio.module.scss";
 import { portfolioItems } from "../SideData";
 import { motion } from "framer-motion";
 import Section from "../section/section";
+import Image from "next/image";
 /* 
 import usePortfolioServices from "../../services/PortfolioServices"; */
 
@@ -42,7 +43,7 @@ export default function Portfolio() {
             variants={itemVariants}
             className={`${classes.item} ${className}`}
           >
-            <img src={img} alt={alt} />
+            <Image src={img} alt={alt} />
           </motion.a>
         ))}
       </div>

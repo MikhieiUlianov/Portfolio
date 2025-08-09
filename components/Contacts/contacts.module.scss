@@ -10,6 +10,7 @@
   }
 
   .photo {
+    position: relative;
     display: none;
   }
 
@@ -19,12 +20,6 @@
     .divider {
       margin: 0;
     }
-  }
-
-  .title {
-    position: relative;
-    padding: 1px 0 0 12px;
-    @include before_circle;
   }
 
   .text,

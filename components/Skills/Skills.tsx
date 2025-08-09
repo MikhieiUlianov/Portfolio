@@ -4,6 +4,7 @@ import { skillsItems } from "../SideData";
 import SkillsRatings from "./SkillsRatings";
 import { motion } from "framer-motion";
 import Section from "../section/section";
+import Image from "next/image";
 
 const itemVariants = {
   hidden: { opacity: 0, y: 30 },
@@ -36,7 +37,7 @@ export default function Skills() {
               variants={itemVariants}
             >
               <div className={classes["item-img"]}>
-                <img src={img} alt={alt} />
+                <Image src={img} alt={alt} />
               </div>
               <h3 className="title title_fz14">{title}</h3>
               <p>{description}</p>

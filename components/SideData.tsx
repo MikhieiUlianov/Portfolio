@@ -9,7 +9,7 @@ import mongoIcon from "../public/icons/coding/Mongo.db.svg";
 //About
 import webDevIcon from "../public/icons/skills/design.svg";
 import mobileDevIcon from "../public/icons/skills/mobile-dev.svg";
-import uiUxIcon from "../public/icons/skills/design.svg"; // you can use another if needed
+import uiUxIcon from "../public/icons/skills/design.svg";
 
 //Resume
 import universityIcon from "../public/icons/advantages/University.svg";

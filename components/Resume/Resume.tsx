@@ -3,6 +3,7 @@ import classes from "./resume.module.scss";
 import { resumeData } from "../SideData";
 import { motion } from "framer-motion";
 import Section from "../section/section";
+import Image from "next/image";
 
 const itemVariants = {
   hidden: { opacity: 0, y: 30 },
@@ -40,7 +41,7 @@ export default function Resume() {
                 <div className={classes.item}>
                   <div className={classes["item-head"]}>
                     <div className={classes["item-icon"]}>
-                      <img src={item.icon} alt={item.alt} />
+                      <Image src={item.icon} alt={item.alt} />
                     </div>
                     <h4 className="title title_fz14">{item.title}</h4>
                     <div className={classes["item-location"]}>
@@ -71,7 +72,7 @@ export default function Resume() {
                 <div className={classes.item}>
                   <div className={classes["item-head"]}>
                     <div className={classes["item-icon"]}>
-                      <img src={item.icon} alt={item.alt} />
+                      <Image src={item.icon} alt={item.alt} />
                     </div>
                     <h4 className="title title_fz14">{item.title}</h4>
                     <div className={classes["item-location"]}>

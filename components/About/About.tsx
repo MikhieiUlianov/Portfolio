@@ -1,5 +1,6 @@
 "use client";
 import classes from "./about.module.scss";
+import Image from "next/image";
 import { aboutSkills } from "../SideData";
 import { motion } from "framer-motion";
 import Section from "../section/section";
@@ -9,19 +10,17 @@ export default function About() {
     <Section sectionClass={classes.about}>
       <div className={classes.wrapper}>
         <div className={classes.photo}>
-          <picture>
-            <source
-              media="(max-width: 576px)"
-              srcSet="/src/img/Photo-min.jpeg"
-            />
-            <source media="(min-width: 577px)" srcSet="/src/img/Photo.jpeg" />
-            <img src="/src/img/Photo.jpeg" alt="photo" />
-          </picture>
+          <Image
+            src="/img/Photo.jpeg"
+            alt="Some of my photo"
+            fill
+            style={{ objectFit: "cover" }}
+          />
         </div>
 
         <div className={classes.descr}>
           <motion.h2
-            className={`title title_fz16 ${classes.title}`}
+            className="title title_fz16 title__section-title"
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
@@ -31,7 +30,7 @@ export default function About() {
           </motion.h2>
 
           <motion.div
-            className={`title ${classes.subtitle}`}
+            className="title title_fz36 title__section-subtitle"
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
@@ -74,7 +73,7 @@ export default function About() {
               viewport={{ once: true, amount: 0.2 }}
             >
               <div className={classes["skills-circle"]}>
-                <img src={skill.img} alt={skill.alt} />
+                <Image src={skill.img} alt={skill.alt} />
               </div>
               <div>
                 <div className="title title_fz14">{skill.title}</div>

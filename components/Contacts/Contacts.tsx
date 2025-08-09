@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Section from "../section/section";
 import classes from "./contacts.module.scss";
 
@@ -6,12 +7,14 @@ export default function Contacts() {
     <Section sectionClass={classes.contacts}>
       <div className={classes.wrapper}>
         <div className={classes.photo}>
-          <img src="/img/Photo.jpeg" alt="photo" />
+          <Image src="/img/Photo.jpeg" alt="photo" fill />
         </div>
 
         <div className={classes.descr}>
-          <h2 className={`title title_fz16 ${classes.title}`}>Contacts</h2>
-          <div className={`title ${classes.subtitle}`}>Contact me</div>
+          <h2 className="title title_fz16 title__section-title">Contacts</h2>
+          <div className="title title_fz36 title__section-subtitle">
+            Contact me
+          </div>
           <div className="divider"></div>
           <div className={`title title_fz14 ${classes.text}`}>
             In any way convinient for you:
