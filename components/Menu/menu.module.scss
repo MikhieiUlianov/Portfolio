@@ -1,6 +1,28 @@
-@use "/src/sass/base/variables.scss" as *;
-@use "/src/sass/base/mixins.scss" as *;
+@use "/sass/base/variables.scss" as *;
+@use "/sass/base/mixins.scss" as *;
 
+.hamburger {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  display: flex;
+  height: 21px;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  align-items: flex-end;
+
+  span {
+    display: block;
+    width: 30px;
+    height: 3px;
+    background: rgb(21, 24, 18);
+  }
+
+  span.long {
+    width: 36px;
+  }
+}
 .menu {
   position: fixed;
   top: 0;
@@ -18,26 +40,27 @@
     left: 0;
   }
 
-  &__block {
+  .block {
+    width: 250px;
+    padding-left: 20px;
     position: relative;
-    padding-top: 140px;
-    padding-left: 40px;
-    width: 345px;
+    padding-top: 100px;
     height: 100%;
     background-color: $orange;
     transition: 0.6s all;
     z-index: 10;
   }
 
-  &__close {
+  .close {
+    width: 30px;
+    height: 30px;
     position: absolute;
     right: 25px;
     top: 25px;
-    font-size: 24px;
     cursor: pointer;
   }
 
-  &__list {
+  .list {
     display: flex;
     flex-direction: column;
     row-gap: 15px;
@@ -45,7 +68,7 @@
     list-style-type: none;
   }
 
-  &__link {
+  .link {
     position: relative;
     font-size: 24px;
     font-weight: 700;
@@ -89,7 +112,7 @@
     }
   }
 
-  &__social {
+  .social {
     position: absolute;
     align-items: center;
     display: flex;
@@ -107,7 +130,7 @@
     }
   }
 
-  &__overlay {
+  .overlay {
     position: fixed;
     top: 0;
     left: 0;
@@ -115,5 +138,22 @@
     height: 100%;
     background-color: #fff;
     opacity: 0.75;
+  }
+}
+
+.menu {
+  .block {
+    width: 250px;
+    padding-left: 20px;
+  }
+}
+
+@media (min-width: 576px) {
+  .menu {
+    .block {
+      padding-top: 140px;
+      padding-left: 40px;
+      width: 345px;
+    }
   }
 }

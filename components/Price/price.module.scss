@@ -1,0 +1,76 @@
+@use "/sass/base/mixins.scss" as *;
+
+.price {
+  padding-top: 40px;
+
+  .wrapper {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-auto-rows: minmax(45px, auto);
+    row-gap: 15px;
+    justify-content: center;
+  }
+
+  .item {
+    position: relative;
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: repeat(2, minmax(21px, auto));
+    row-gap: 5px;
+    padding-left: 25px;
+    @include before_circle;
+
+    &:before {
+      width: 15px;
+      height: 15px;
+      top: 3px;
+    }
+  }
+
+  .type,
+  .count {
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 21px;
+  }
+
+  .count {
+    justify-self: end;
+  }
+
+  .descr {
+    grid-column: 1 / -1;
+    font-size: 12px;
+    line-height: 18px;
+  }
+
+  @media (min-width: 768px) {
+    padding-top: 60px;
+
+    .wrapper {
+      margin-top: 60px;
+      justify-content: space-between;
+
+      grid-template-rows: repeat(3, minmax(45px, auto));
+      grid-auto-rows: minmax(45px, auto);
+      row-gap: 15px;
+      padding: 0 60px;
+    }
+  }
+
+  @media (min-width: 1200px) {
+    padding-top: 60px;
+
+    .wrapper {
+      margin-top: 60px;
+      justify-content: space-between;
+      grid-template-columns: repeat(2, 365px);
+
+      grid-template-rows: repeat(3, minmax(45px, auto));
+      grid-auto-rows: minmax(45px, auto);
+      row-gap: 15px;
+      padding: 0 60px;
+    }
+  }
+}

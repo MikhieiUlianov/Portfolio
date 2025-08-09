@@ -1,0 +1,77 @@
+@use "/sass/base/mixins.scss" as *;
+@use "/sass/base/variables.scss" as *;
+
+.skills {
+  padding-top: 40px;
+
+  .items {
+    margin-top: 20px;
+    padding: 0 10px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 13px;
+    justify-content: center;
+  }
+
+  .item {
+    border: 1px solid black;
+    padding: 30px 30px 25px 30px;
+
+    &-img {
+      display: flex;
+      align-items: center;
+      min-height: 65px;
+    }
+
+    h3 {
+      margin-top: 20px;
+      margin-bottom: 0;
+    }
+
+    p {
+      margin-top: 15px;
+      margin-bottom: 0;
+      font-size: 12px;
+      line-height: 18px;
+    }
+  }
+
+  @media (min-width: 576px) {
+    padding-top: 60px;
+
+    .items {
+      margin-top: 60px;
+      grid-template-columns: repeat(2, 260px);
+      justify-content: space-between;
+      padding: 0 10px;
+    }
+  }
+
+  /* === ≥768px === */
+  @media (min-width: 768px) {
+    padding-top: 40px;
+
+    .items {
+      padding: 0;
+      justify-content: center;
+      gap: 20px;
+    }
+  }
+
+  @media (min-width: 992px) {
+    .items {
+      padding: 0 20px;
+    }
+  }
+
+  @media (min-width: 1200px) {
+    padding-top: 120px;
+
+    .items {
+      margin-top: 60px;
+      grid-template: repeat(auto-fit, minmax(270px, auto)) / repeat(4, 270px);
+      grid-auto-rows: minmax(270px, auto);
+      gap: 13px;
+    }
+  }
+}

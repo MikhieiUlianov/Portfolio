@@ -1,0 +1,207 @@
+@use "/sass/base/mixins.scss" as *;
+.contacts {
+  padding: 120px 0 90px 0;
+
+  .wrapper {
+    padding: 0px 10px;
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-content: space-between;
+  }
+
+  .photo {
+    display: none;
+  }
+
+  .descr {
+    padding-top: 6px;
+
+    .divider {
+      margin: 0;
+    }
+  }
+
+  .title {
+    position: relative;
+    padding: 1px 0 0 12px;
+    @include before_circle;
+  }
+
+  .text,
+  .social {
+    margin-top: 20px;
+  }
+
+  .link {
+    margin-right: 25px;
+
+    img {
+      max-width: 30px;
+      max-height: 30px;
+    }
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  .form {
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 45px 45px 190px minmax(45px, auto);
+    justify-content: space-between;
+    row-gap: 27px;
+
+    label {
+      display: block;
+      position: absolute;
+      top: -9px;
+      left: 12px;
+      height: 18px;
+      padding: 0 8px;
+      background-color: #fff;
+      font-size: 12px;
+      margin-bottom: 0;
+    }
+  }
+
+  .triggers {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: 1fr;
+    column-gap: 0;
+    row-gap: 20px;
+    margin-top: 20px;
+  }
+
+  .policy {
+    font-size: 12px;
+    line-height: 14px;
+    display: flex;
+    align-items: center;
+    width: 180px;
+    margin: 0 auto;
+  }
+
+  .input {
+    position: relative;
+
+    input {
+      width: 100%;
+      height: 100%;
+      padding: 0 20px;
+      font-size: 12px;
+    }
+  }
+
+  .textarea {
+    position: relative;
+    grid-column: 1 / -1;
+
+    textarea {
+      width: 100%;
+      height: 100%;
+      resize: none;
+      padding: 20px;
+      font-size: 12px;
+    }
+  }
+
+  .btn {
+    border: none;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 21px;
+    order: 2;
+    max-width: 220px;
+    margin: 0 auto;
+  }
+}
+
+@media (min-width: 576px) {
+  .contacts {
+    .form {
+      grid-template-columns: repeat(2, 250px);
+      grid-template-rows: 45px 190px 45px;
+      row-gap: 27px;
+    }
+
+    .triggers {
+      grid-template-columns: repeat(2, auto);
+      column-gap: 35px;
+      row-gap: 0;
+    }
+
+    .wrapper {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .contacts {
+    padding-top: 40px;
+
+    .photo {
+      display: none;
+    }
+
+    .wrapper {
+      grid-template-columns: 1fr;
+    }
+
+    .form {
+      gap: 40px;
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .triggers {
+      margin: 0;
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  .contacts {
+    .photo {
+      display: block;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+    .wrapper {
+      gap: 50px;
+      grid-template-columns: 300px 1fr;
+      padding: 0;
+    }
+
+    .form {
+      grid-template-columns: repeat(2, 165px);
+    }
+
+    .btn {
+      padding: 8px 25px;
+      line-height: 16px;
+      margin: initial;
+      order: initial;
+      max-width: initial;
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  .contacts {
+    .wrapper {
+      padding: 0;
+      grid-template-columns: 400px 1fr;
+      gap: 50px;
+    }
+
+    .form {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}

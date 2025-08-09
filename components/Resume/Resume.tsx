@@ -1,6 +1,8 @@
-import "./resume.scss";
-import { resumeData } from "../../SideData";
+"use client";
+import classes from "./resume.module.scss";
+import { resumeData } from "../SideData";
 import { motion } from "framer-motion";
+import Section from "../section/section";
 
 const itemVariants = {
   hidden: { opacity: 0, y: 30 },
@@ -13,76 +15,76 @@ const itemVariants = {
 
 export default function Resume() {
   return (
-    <section className="resume">
-      <div className="container">
-        <h2 className="title title_fz16 title__section-title">Experience</h2>
-        <div className="title title_fz36 title__section-subtitle">
-          What can I help
+    <Section sectionClass={classes.resume}>
+      <h2 className="title title_fz16 title__section-title">Experience</h2>
+      <div className="title title_fz36 title__section-subtitle">
+        What can I help
+      </div>
+      <div className="divider"></div>
+
+      <div className={classes.wrapper}>
+        <div className={classes.column}>
+          <h3 className={` title title_fz20 ${classes["column-title"]}`}>
+            Education
+          </h3>
+          <ul>
+            {resumeData.education.map((item, i) => (
+              <motion.li
+                key={item.title}
+                custom={i}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.3 }}
+                variants={itemVariants}
+              >
+                <div className={classes.item}>
+                  <div className={classes["item-head"]}>
+                    <div className={classes["item-icon"]}>
+                      <img src={item.icon} alt={item.alt} />
+                    </div>
+                    <h4 className="title title_fz14">{item.title}</h4>
+                    <div className={classes["item-location"]}>
+                      {item.location}
+                    </div>
+                  </div>
+                  <div className={classes["item-body"]}>{item.description}</div>
+                </div>
+              </motion.li>
+            ))}
+          </ul>
         </div>
-        <div className="divider"></div>
 
-        <div className="resume__wrapper">
-          <div className="resume__column">
-            <h3 className="title title_fz20 resume__column-title">Education</h3>
-            <ul>
-              {resumeData.education.map((item, i) => (
-                <motion.li
-                  key={item.title}
-                  custom={i}
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={{ once: true, amount: 0.3 }}
-                  variants={itemVariants}
-                >
-                  <div className="resume__item">
-                    <div className="resume__item-head">
-                      <div className="resume__item-icon">
-                        <img src={item.icon} alt={item.alt} />
-                      </div>
-                      <h4 className="title title_fz14">{item.title}</h4>
-                      <div className="resume__item-location">
-                        {item.location}
-                      </div>
+        <div className={classes.column}>
+          <h3 className={` title title_fz20 ${classes["column-title"]}`}>
+            Work experience
+          </h3>
+          <ul>
+            {resumeData.work.map((item, i) => (
+              <motion.li
+                key={item.title}
+                custom={i}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.3 }}
+                variants={itemVariants}
+              >
+                <div className={classes.item}>
+                  <div className={classes["item-head"]}>
+                    <div className={classes["item-icon"]}>
+                      <img src={item.icon} alt={item.alt} />
                     </div>
-                    <div className="resume__item-body">{item.description}</div>
-                  </div>
-                </motion.li>
-              ))}
-            </ul>
-          </div>
-
-          <div className="resume__column">
-            <h3 className="title title_fz20 resume__column-title">
-              Work experience
-            </h3>
-            <ul>
-              {resumeData.work.map((item, i) => (
-                <motion.li
-                  key={item.title}
-                  custom={i}
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={{ once: true, amount: 0.3 }}
-                  variants={itemVariants}
-                >
-                  <div className="resume__item">
-                    <div className="resume__item-head">
-                      <div className="resume__item-icon">
-                        <img src={item.icon} alt={item.alt} />
-                      </div>
-                      <h4 className="title title_fz14">{item.title}</h4>
-                      <div className="resume__item-location">
-                        {item.location}
-                      </div>
+                    <h4 className="title title_fz14">{item.title}</h4>
+                    <div className={classes["item-location"]}>
+                      {item.location}
                     </div>
-                    <div className="resume__item-body">{item.description}</div>
                   </div>
-                </motion.li>
-              ))}
-            </ul>
-          </div>
+                  <div className={classes["item-body"]}>{item.description}</div>
+                </div>
+              </motion.li>
+            ))}
+          </ul>
         </div>
       </div>
-    </section>
+    </Section>
   );
 }
