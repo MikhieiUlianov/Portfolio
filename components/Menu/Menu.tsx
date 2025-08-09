@@ -15,7 +15,7 @@ export default function Menu() {
         <span className="long"></span>
         <span></span>
       </div>
-      <div className={`${classes.menu} ${active ? classes.active : undefined}`}>
+      <div className={`${classes.menu} ${active ? classes.active : ""}`}>
         <div className={classes.block}>
           <div onClick={() => setActive((prev) => !prev)}>
             <CloseIcon extraClass={`${classes.close} icon-cancel`} />

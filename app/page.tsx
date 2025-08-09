@@ -7,6 +7,7 @@ import About from "@/components/About/About";
 import Resume from "@/components/Resume/Resume";
 import SidePanel from "@/components/Sidepanel/Sidepanel";
 import Skills from "@/components/Skills/Skills";
+import Link from "next/link";
 
 export default function Home() {
   return (

@@ -1,19 +1,8 @@
-"use client";
 import classes from "./skills.module.scss";
 import { skillsItems } from "../SideData";
 import SkillsRatings from "./SkillsRatings";
-import { motion } from "framer-motion";
 import Section from "../section/section";
-import Image from "next/image";
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 30 },
-  visible: (i: number) => ({
-    opacity: 1,
-    y: 0,
-    transition: { delay: i * 0.15, duration: 0.5, ease: "easeOut" },
-  }),
-};
+import SkillItem from "./skill-item";
 
 export default function Skills() {
   return (
@@ -26,22 +15,8 @@ export default function Skills() {
         <div className="divider"></div>
 
         <div className={classes.items}>
-          {skillsItems.map(({ img, alt, title, description }, i) => (
-            <motion.div
-              key={title}
-              className={classes.item}
-              custom={i}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.3 }}
-              variants={itemVariants}
-            >
-              <div className={classes["item-img"]}>
-                <Image src={img} alt={alt} />
-              </div>
-              <h3 className="title title_fz14">{title}</h3>
-              <p>{description}</p>
-            </motion.div>
+          {skillsItems.map((skill, i) => (
+            <SkillItem key={skill.title} {...skill} index={i} />
           ))}
         </div>
 
