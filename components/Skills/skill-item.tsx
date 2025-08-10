@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, easeOut } from "framer-motion";
-import classes from "./skills.module.scss";
+import classes from "./skill-item.module.scss";
 import Image from "next/image";
 
 type SkillItemProps = {

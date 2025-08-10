@@ -1,12 +1,12 @@
-import Contacts from "@/components/Contacts/Contacts";
-import Menu from "@/components/Menu/Menu";
-import Portfolio from "@/components/Portfolio/Portfolio";
-import Price from "@/components/Price/Price";
-import Promo from "@/components/Promo/Promo";
+import Contacts from "@/components/contacts/Contacts";
+import Menu from "@/components/menu/Menu";
+import Portfolio from "@/components/portfolio/Portfolio";
+import Price from "@/components/price/Price";
+import Promo from "@/components/promo/Promo";
 import About from "@/components/About/About";
-import Resume from "@/components/Resume/Resume";
-import SidePanel from "@/components/Sidepanel/Sidepanel";
-import Skills from "@/components/Skills/Skills";
+import Resume from "@/components/resume/Resume";
+import SidePanel from "@/components/sidepanel/Sidepanel";
+import Skills from "@/components/skills/Skills";
 import Link from "next/link";
 
 export default function Home() {

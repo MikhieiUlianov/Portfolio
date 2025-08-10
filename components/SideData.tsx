@@ -223,3 +223,29 @@ export const portfolioItems = [
     className: "horizontal",
   },
 ];
+export const filtersBlocks = [
+  {
+    label: "Programming Languages",
+    filters: ["JavaScript", "TypeScript", "Python", "Go", "Rust"],
+  },
+  {
+    label: "Frameworks & Libraries",
+    filters: ["React", "Next.js", "Vue", "Svelte", "Express", "Django"],
+  },
+  {
+    label: "UI & Styling",
+    filters: ["Tailwind CSS", "SCSS", "Styled Components", "MUI", "Bootstrap"],
+  },
+  {
+    label: "Databases",
+    filters: ["PostgreSQL", "MongoDB", "SQLite", "MySQL", "Redis"],
+  },
+  {
+    label: "DevOps & Tools",
+    filters: ["Docker", "Kubernetes", "GitHub Actions", "Vercel", "AWS"],
+  },
+  {
+    label: "Design Tools",
+    filters: ["Figma", "Adobe XD", "Photoshop", "Illustrator"],
+  },
+];
