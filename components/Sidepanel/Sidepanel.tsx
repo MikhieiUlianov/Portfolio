@@ -1,5 +1,6 @@
 import classes from "./sidepanel.module.scss";
 import "../../sass/libs/fontello.css";
+import SocialLinks from "../social-links/social-links";
 
 export default function SidePanel() {
   return (
@@ -8,15 +9,7 @@ export default function SidePanel() {
         <span>Social</span>
       </div>
       <div className={classes.devider}></div>
-      <a href="https://github.com/user09users" className={classes.link}>
-        <div className="icon-github-circled"></div>
-      </a>
-      <a href="https://x.com/rachoookk" className={classes.link}>
-        <div className="icon-twitter"></div>
-      </a>
-      {/* <a href="#" className={classes.link}>
-        <div className="icon-telegram"></div>
-      </a> */}
+      <SocialLinks className={classes.links} />
     </aside>
   );
 }

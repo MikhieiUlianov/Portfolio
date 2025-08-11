@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Section from "../section/section";
 import classes from "./contacts.module.scss";
+import SocialLinks from "../social-links/social-links";
 
 export default function Contacts() {
   return (
@@ -21,9 +22,7 @@ export default function Contacts() {
           </div>
 
           <div className={classes.social}>
-            <a href="#" className={`icon-github-circled ${classes.link}`}></a>
-            <a href="#" className={`icon-telegram ${classes.link}`}></a>
-            <a href="#" className={`icon-instagram ${classes.link}`}></a>
+            <SocialLinks className={classes.links} />
           </div>
           <div className={`title title_fz14 ${classes.text}`}>
             Or leave your details and I will write you myself:
