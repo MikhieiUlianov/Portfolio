@@ -11,12 +11,12 @@ export default function SidePanel() {
       <a href="https://github.com/user09users" className={classes.link}>
         <div className="icon-github-circled"></div>
       </a>
-      <a href="#" className={classes.link}>
-        <div className="icon-instagram"></div>
+      <a href="https://x.com/rachoookk" className={classes.link}>
+        <div className="icon-twitter"></div>
       </a>
-      <a href="#" className={classes.link}>
-        <div className="icon-facebook"></div>
-      </a>
+      {/* <a href="#" className={classes.link}>
+        <div className="icon-telegram"></div>
+      </a> */}
     </aside>
   );
 }

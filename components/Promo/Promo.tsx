@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import Section from "../section/section";
 import classes from "./promo.module.scss";
-import Link from "next/link";
+import StyledButton from "../UI/styled-button/styled-button";
 
 export default function Promo() {
   return (
@@ -37,22 +37,12 @@ export default function Promo() {
           viewport={{ once: true, amount: 0.2 }}
         >
           <div className={classes.actions}>
-            <motion.p
-              whileHover={{ scale: 1.1 }}
-              transition={{ type: "spring", stiffness: 300 }}
-            >
-              <Link href="/my-tools" className={classes.link}>
-                My Tools
-              </Link>
-            </motion.p>
-            <motion.p
-              whileHover={{ scale: 1.1 }}
-              transition={{ type: "spring", stiffness: 300 }}
-            >
-              <Link href="/about" className={classes.link}>
-                About me
-              </Link>
-            </motion.p>
+            <StyledButton href="/my-tools" className={classes.link}>
+              My Tools
+            </StyledButton>
+            <StyledButton href="/about" className={classes.link}>
+              About Me
+            </StyledButton>
           </div>
         </motion.div>
       </Section>

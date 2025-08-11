@@ -1,10 +1,10 @@
 import classes from "./skills.module.scss";
 import { skillsItems } from "../SideData";
-import SkillsRatings from "./SkillsRatings";
 import Section from "../section/section";
 import SkillItem from "./skill-item";
 
 export default function Skills() {
+  const skills = skillsItems.splice(0, 3);
   return (
     <>
       <Section sectionClass={classes.skills}>
@@ -15,12 +15,10 @@ export default function Skills() {
         <div className="divider"></div>
 
         <div className={classes.items}>
-          {skillsItems.map((skill, i) => (
+          {skills.map((skill, i) => (
             <SkillItem key={skill.title} {...skill} index={i} />
           ))}
         </div>
-
-        <SkillsRatings />
       </Section>
     </>
   );
