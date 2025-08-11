@@ -2,7 +2,7 @@ import Contacts from "@/components/contacts/Contacts";
 import Portfolio from "@/components/portfolio/Portfolio";
 import Price from "@/components/price/Price";
 import Promo from "@/components/promo/Promo";
-import About from "@/components/About/About";
+import About from "@/components/about/about";
 import Resume from "@/components/resume/Resume";
 import SidePanel from "@/components/sidepanel/Sidepanel";
 import Skills from "@/components/skills/Skills";

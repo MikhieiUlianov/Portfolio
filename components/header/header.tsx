@@ -2,6 +2,7 @@
 import { useState } from "react";
 import classes from "./header.module.scss";
 import StyledButton from "../UI/styled-button/styled-button";
+import Link from "next/link";
 import Image from "next/image";
 export default function Header() {
   const [logged, setLogged] = useState(true);
@@ -14,13 +15,15 @@ export default function Header() {
           <StyledButton>About</StyledButton>
         </div>
 
-        <Image
-          width={100}
-          height={100}
-          className={classes.logo}
-          src="/img/logo.png"
-          alt="logo"
-        />
+        <Link href="/">
+          <Image
+            width={100}
+            height={100}
+            className={classes.logo}
+            src="/img/logo.png"
+            alt="logo"
+          />
+        </Link>
 
         <div className={classes.desktop}>
           {logged ? (

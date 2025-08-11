@@ -3,6 +3,7 @@ import "./globals.scss";
 import ReduxProvider from "@/store/redux-provider";
 import Header from "@/components/header/header";
 import Menu from "@/components/menu/Menu";
+import Footer from "@/components/footer/Footer";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -21,6 +22,7 @@ export default function RootLayout({
           <Header />
           <Menu />
           {children}
+          <Footer />
         </ReduxProvider>
       </body>
     </html>

@@ -11,14 +11,16 @@
   position: relative;
   padding-top: 206px;
   .title {
-    line-height: 39px;
+    line-height: 30px;
     width: 300px;
   }
   .actions {
     margin-top: 30px;
     display: flex;
     flex-direction: column;
+    align-items: start;
     gap: 10px;
+    padding-bottom: 20px;
   }
   .link {
     background: $orange;

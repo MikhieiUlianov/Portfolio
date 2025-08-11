@@ -20,7 +20,7 @@ export default function Promo() {
         </motion.div>
 
         <motion.div
-          className={`${classes.title} title title_fz48`}
+          className={`${classes.title} title title_fz30`}
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
