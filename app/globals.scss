@@ -141,31 +141,19 @@ button {
   font-weight: 500;
   color: #ddd8d8;
 }
-.not-found {
-  a {
-    margin: 50px auto 0 auto;
-    background: $orange;
-    border-radius: 5px;
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
-    padding: 12px 25px;
-    color: rgb(0, 0, 0);
-    font-size: 14px;
-    font-weight: 700;
-    line-height: 21px;
-    text-align: center;
-    width: 135px;
-    min-height: 45px;
-    align-items: center;
-    justify-content: center;
-    display: flex;
-  }
-}
 .margin {
   margin-top: 25px;
+}
+.margin-bottom {
+  margin-bottom: 25px;
 }
 @media (min-width: 1200px) {
   .margin {
     margin-top: 50px;
+  }
+
+  .margin-bottom {
+    margin-bottom: 50px;
   }
   .loading {
     width: 300px;

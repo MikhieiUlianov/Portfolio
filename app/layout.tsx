@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import "./globals.scss";
 import ReduxProvider from "@/store/redux-provider";
-import Header from "@/components/header/header";
-import Menu from "@/components/menu/Menu";
-import Footer from "@/components/footer/Footer";
+import Header from "@/components/navigation/header/header";
+import Menu from "@/components/navigation/menu/Menu";
+import Footer from "@/components/navigation/footer/Footer";
 
 export const metadata: Metadata = {
   title: "Create Next App",

@@ -3,12 +3,15 @@
 import { motion, easeOut } from "framer-motion";
 import classes from "./skill-item.module.scss";
 import Image from "next/image";
+import Link from "next/link";
+import slugify from "slugify";
 
 type SkillItemProps = {
   img: string;
   alt: string;
   title: string;
   description: string;
+  date: string;
   index: number;
 };
 
@@ -16,6 +19,7 @@ export default function SkillItem({
   img,
   alt,
   title,
+  date,
   description,
   index,
 }: SkillItemProps) {
@@ -27,6 +31,13 @@ export default function SkillItem({
       transition: { delay: i * 0.15, duration: 0.5, ease: easeOut },
     }),
   };
+  const slug = slugify(title.replace(/\./g, "-"), { lower: true });
+
+  const formattedDate = new Date(date).toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "short",
+    day: "numeric",
+  });
 
   return (
     <motion.div
@@ -37,11 +48,15 @@ export default function SkillItem({
       viewport={{ once: true, amount: 0.3 }}
       variants={itemVariants}
     >
-      <div className={classes["item-img"]}>
-        <Image src={img} alt={alt} />
-      </div>
-      <h3 className="title title_fz14">{title}</h3>
-      <p>{description}</p>
+      <Link href={`/my-tools/${slug}`}>
+        <div className={classes["item-img"]}>
+          <Image src={img} alt={alt} />
+        </div>
+        <h3 className="title title_fz14">{title}</h3>
+        <p>{description}</p>
+
+        <div>{formattedDate}</div>
+      </Link>
     </motion.div>
   );
 }

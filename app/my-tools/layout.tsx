@@ -1,14 +1,9 @@
-import { ReactNode } from "react";
-import classes from "./layout.module.scss";
 import Section from "@/components/section/section";
-import CatalogHeader from "@/components/catalog-header/catalog-header";
 
-export default function MyTools({
-  filters,
-  tools,
+export default function MyToolsLayout({
+  children,
 }: {
-  filters: ReactNode;
-  tools: ReactNode;
+  children: React.ReactNode;
 }) {
   return (
     <Section>
@@ -18,15 +13,14 @@ export default function MyTools({
       >
         Skills
       </h2>
+
       <div className="title title_fz36 title__section-subtitle">
         What I use in my work
       </div>
+
       <div className="divider"></div>
-      <CatalogHeader />
-      <div className={classes.blocks}>
-        <aside>{filters}</aside>
-        <main>{tools}</main>
-      </div>
+
+      {children}
     </Section>
   );
 }

@@ -1,5 +1,9 @@
-import Filters from "@/components/filters/filters";
+import Filters from "@/components/tools-page/filters/filters";
 
 export default function FiltersPage() {
-  return <Filters />;
+  return (
+    <aside>
+      <Filters />
+    </aside>
+  );
 }

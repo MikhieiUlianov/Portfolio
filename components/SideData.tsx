@@ -1,10 +1,12 @@
-import htmlIcon from "../public/icons/coding/Html.svg";
+import htmlIcon from "../public/icons/coding/html5.svg";
 import cssIcon from "../public/icons/coding/css3.svg";
-import jsIcon from "../public/icons/coding/JS.svg";
-import jqueryIcon from "../public/icons/coding/Jquery.svg";
-import reactIcon from "../public/icons/coding/React.svg";
-import nodeIcon from "../public/icons/coding/Node.js.svg";
-import mongoIcon from "../public/icons/coding/Mongo.db.svg";
+import jsIcon from "../public/icons/coding/java-script.svg";
+import python from "../public/icons/coding/python.svg";
+import reactIcon from "../public/icons/coding/react.svg";
+import nodeIcon from "../public/icons/coding/node-js.svg";
+import mongoIcon from "../public/icons/coding/mongo-db.svg";
+import typeScript from "../public/icons/coding/typescript.svg";
+import nextJs from "../public/icons/coding/next-js.svg";
 
 //About
 import webDevIcon from "../public/icons/skills/design.svg";
@@ -137,6 +139,7 @@ export const resumeData = {
 };
 export const skillsItems = [
   {
+    date: "2025-07-03",
     img: htmlIcon,
     alt: "html5",
     title: "HTML5",
@@ -144,6 +147,7 @@ export const skillsItems = [
       "It is what creates the framework of your website or application, and the fifth version will allow me to create a more SEO-optimized structure for your product.",
   },
   {
+    date: "2025-07-03",
     img: cssIcon,
     alt: "css3",
     title: "CSS3",
@@ -151,6 +155,7 @@ export const skillsItems = [
       "This style language allows me to create absolutely any look for your website or application. The only limit is your imagination.",
   },
   {
+    date: "2025-03-02",
     img: jsIcon,
     alt: "java script",
     title: "Java Script",
@@ -158,13 +163,15 @@ export const skillsItems = [
       "This programming language allows you to animate anything: sliders, windows, tooltips, tabs, receiving data from the server and much more.",
   },
   {
-    img: jqueryIcon,
-    alt: "Jquery",
-    title: "Jquery",
+    date: "2024-10-20",
+    img: python,
+    alt: "Python",
+    title: "Python",
     description:
-      "The Jquery library will help speed up development. We won't integrate it into the project unless necessary, but we have the skill to work with it.",
+      "A versatile programming language popular for backend development, data analysis, automation, and more.",
   },
   {
+    date: "2025-05-03",
     img: reactIcon,
     alt: "React",
     title: "React",
@@ -172,6 +179,7 @@ export const skillsItems = [
       "This library allows you to create web applications. We can create the most interactive product specifically for your purposes.",
   },
   {
+    date: "2025-08-10",
     img: nodeIcon,
     alt: "Node.js",
     title: "Node.js",
@@ -179,11 +187,28 @@ export const skillsItems = [
       "This platform allows you to create a backend for your product - the “brains” that will perform actions that the user does not see.",
   },
   {
+    date: "2025-08-01",
     img: mongoIcon,
     alt: "Mongo.db",
     title: "Mongo.db",
     description:
       "This is a non-relational database that will store the data of your website or application.",
+  },
+  {
+    date: "2025-06-01",
+    img: typeScript,
+    alt: "TypeScript",
+    title: "TypeScript",
+    description:
+      "A typed superset of JavaScript that helps write more reliable and maintainable code.",
+  },
+  {
+    date: "2025-07-10",
+    img: nextJs,
+    alt: "Next.js",
+    title: "Next.js",
+    description:
+      "A React framework for building fast, scalable web applications with server-side rendering and static site generation.",
   },
 ];
 export const skillsRatings = [
