@@ -14,7 +14,7 @@ function normalizeString(str: string) {
   return str
     .toLowerCase()
     .trim()
-    .replace(/[^a-z0-9а-яё]/gi, ""); // remove everything except letters and digits, no spaces
+    .replace(/[^a-z0-9а-яё]/gi, "");
 }
 export default function useFilteredTools(tools: ToolsType) {
   const { inputValue, activeFilters } = useSelector(
@@ -32,7 +32,9 @@ export default function useFilteredTools(tools: ToolsType) {
 
     const matchesFilter =
       normalizedActiveFilters.length === 0 ||
-      normalizedActiveFilters.some((f) => f === normalizedTitle);
+      normalizedActiveFilters.some(
+        (f) => normalizeString(f) === normalizedTitle
+      );
     return matchesInput && matchesFilter;
   });
 }

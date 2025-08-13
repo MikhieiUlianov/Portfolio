@@ -1,13 +1,12 @@
 "use client";
 
-import Section from "@/components/general-use/section/section";
 import classes from "./tools.module.scss";
 import { skillsItems } from "@/components/SideData";
 import useFilteredTools from "@/lib/filtering-logic";
 import Image from "next/image";
 import SkillItem from "@/components/skills/skill-item";
 import { useState } from "react";
-import StyledButton from "@/components/UI/styled-button/styled-button";
+import ListTemplate from "@/components/UI/items-list/items-list";
 
 export default function Tools() {
   const [skillsAmount, setSkillsAmount] = useState({
@@ -25,7 +24,10 @@ export default function Tools() {
   }
 
   return (
-    <Section>
+    <ListTemplate
+      buttonAction={handleLoadMore}
+      isFinished={skillsAmount.finished}
+    >
       {filteredItems.length < 1 && (
         <div className={classes.error}>
           <Image
@@ -37,16 +39,9 @@ export default function Tools() {
           <h2>There is no matched tools.</h2>
         </div>
       )}
-      <div className={classes.tools}>
-        {filteredItems.map((skill, i) => (
-          <SkillItem key={skill.title} {...skill} index={i} />
-        ))}
-      </div>
-      {!skillsAmount.finished && (
-        <StyledButton onClick={handleLoadMore} className="margin">
-          Load More
-        </StyledButton>
-      )}
-    </Section>
+      {filteredItems.map((skill, i) => (
+        <SkillItem key={skill.title} {...skill} index={i} />
+      ))}
+    </ListTemplate>
   );
 }

@@ -1,0 +1,46 @@
+@use "/sass/base/mixins.scss" as *;
+@use "/sass/base/variables.scss" as *;
+
+.list {
+  margin-top: 50px;
+  padding: 0 10px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 13px;
+  justify-content: center;
+  li {
+    border: 1px solid black;
+    padding: 10px;
+    transition: all 0.3s;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+}
+
+@media (min-width: 576px) {
+  .list {
+    grid-template-columns: repeat(2, 260px);
+    justify-content: space-between;
+    padding: 0 10px;
+  }
+}
+
+@media (min-width: 768px) {
+  .list {
+    padding: 0;
+    justify-content: center;
+    gap: 20px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .list {
+    margin-top: 0;
+    grid-template: repeat(auto-fit, minmax(270px, auto)) / repeat(
+        auto-fit,
+        270px
+      );
+    grid-auto-rows: minmax(270px, auto);
+    gap: 13px;
+  }
+}
