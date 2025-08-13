@@ -1,5 +1,5 @@
 import { certificatesItems } from "@/components/SideData";
 
-export default function generateStaticParams() {
+export function generateStaticParams() {
   return certificatesItems.map((cer) => ({ slug: cer.slug }));
 }
