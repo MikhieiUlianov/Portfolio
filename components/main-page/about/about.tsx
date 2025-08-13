@@ -3,7 +3,7 @@ import classes from "./about.module.scss";
 import Image from "next/image";
 import { aboutSkills } from "@/components/SideData";
 import { motion } from "framer-motion";
-import Section from "@/components/section/section";
+import Section from "@/components/general-use/section/section";
 
 export default function About() {
   return (

@@ -1,6 +1,6 @@
 "use client";
 
-import Section from "@/components/section/section";
+import Section from "@/components/general-use/section/section";
 import classes from "./tools.module.scss";
 import { skillsItems } from "@/components/SideData";
 import useFilteredTools from "@/lib/filtering-logic";

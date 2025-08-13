@@ -1,6 +1,6 @@
 import classes from "./skills.module.scss";
 import { skillsItems } from "../SideData";
-import Section from "../section/section";
+import Section from "../general-use/section/section";
 import SkillItem from "./skill-item";
 
 export default function Skills() {

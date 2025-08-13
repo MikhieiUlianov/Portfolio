@@ -1,6 +1,6 @@
 "use client";
 
-import Section from "@/components/section/section";
+import Section from "@/components/general-use/section/section";
 import classes from "./certificates.module.scss";
 import { useState } from "react";
 import { certificatesItems } from "@/components/SideData";

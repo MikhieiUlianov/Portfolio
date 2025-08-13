@@ -1,6 +1,6 @@
 import classes from "./portfolio.module.scss";
 import { portfolioItems } from "../../SideData";
-import Section from "@/components/section/section";
+import Section from "@/components/general-use/section/section";
 import PortfolioProject from "./portfolio-project";
 
 export default function Portfolio() {

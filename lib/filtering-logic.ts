@@ -28,7 +28,7 @@ export default function useFilteredTools(tools: ToolsType) {
 
     const matchesInput = normalizedTitle.includes(normalizedInput);
 
-    const normalizedActiveFilters = activeFilters; // they should be normalized already
+    const normalizedActiveFilters = activeFilters;
 
     const matchesFilter =
       normalizedActiveFilters.length === 0 ||

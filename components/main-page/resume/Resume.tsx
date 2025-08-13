@@ -1,5 +1,5 @@
 import classes from "./resume.module.scss";
-import Section from "../../section/section";
+import Section from "../../general-use/section/section";
 import ResumeBlock from "./resume-items";
 import { resumeData } from "../../SideData";
 

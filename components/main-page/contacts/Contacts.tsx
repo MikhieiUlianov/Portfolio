@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Section from "../../section/section";
+import Section from "../../general-use/section/section";
 import classes from "./contacts.module.scss";
 import SocialLinks from "@/components/navigation/social-links/social-links";
 

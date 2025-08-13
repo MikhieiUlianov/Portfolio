@@ -1,4 +1,4 @@
-import Filters from "@/components/tools-page/filters/filters";
+import Filters from "@/components/general-use/filters/filters";
 
 export default function FiltersPage() {
   return (

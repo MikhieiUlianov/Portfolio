@@ -1,12 +1,12 @@
-import Section from "@/components/general-use/section/section";
+import { ReactNode } from "react";
 
-export default function MyToolsLayout({
+export default function MyProjectsLayout({
   children,
 }: {
-  children: React.ReactNode;
+  children: ReactNode;
 }) {
   return (
-    <Section>
+    <div>
       <h2
         className="title title_fz16 title__section-title"
         style={{ marginTop: 50 }}
@@ -19,8 +19,7 @@ export default function MyToolsLayout({
       </div>
 
       <div className="divider"></div>
-
       {children}
-    </Section>
+    </div>
   );
 }

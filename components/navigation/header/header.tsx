@@ -12,7 +12,7 @@ export default function Header() {
       <div className={classes.wrapper}>
         <div className={classes.find}>
           <StyledButton>About</StyledButton>
-          <StyledButton>About</StyledButton>
+          <StyledButton href="/my-projects">My Projects</StyledButton>
         </div>
 
         <Link href="/">

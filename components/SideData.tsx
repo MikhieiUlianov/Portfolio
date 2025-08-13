@@ -37,44 +37,6 @@ import pythonCert from "../public/img/certificates/bestpython.jpg";
 import tsCert from "../public/img/certificates/understanding-typescript.jpg";
 import tsReactCert from "../public/img/certificates/react-typescript-the-practical-guide.jpg";
 
-/* // Example structure for repeated data (social links, menu items, etc.)
-export const sidePanelLinks = [
-  {
-    href: "https://github.com/MikhieiUlianov",
-    icon: "icon-github-circled",
-    label: "GitHub",
-  },
-  {
-    href: "#",
-    icon: "icon-instagram",
-    label: "Instagram",
-  },
-  {
-    href: "#",
-    icon: "icon-facebook",
-    label: "Facebook",
-  },
-];
-
-export const contactsSocialLinks = [
-  {
-    href: "#",
-    icon: "icon-github-circled",
-    label: "GitHub",
-  },
-  {
-    href: "#",
-    icon: "icon-telegram",
-    label: "Telegram",
-  },
-  {
-    href: "#",
-    icon: "icon-instagram",
-    label: "Instagram",
-  },
-];
- */
-// Example for menu items
 export const menuItems = [
   { href: "#promo", label: "Home" },
   { href: "#about", label: "About" },
@@ -258,7 +220,7 @@ export const portfolioItems = [
     className: "horizontal",
   },
 ];
-export const filtersBlocks = [
+export const toolsFiltersBlocks = [
   {
     label: "Programming Languages",
     filters: ["JavaScript", "TypeScript", "Python", "Go", "Rust"],
@@ -284,6 +246,44 @@ export const filtersBlocks = [
     filters: ["Figma", "Adobe XD", "Photoshop", "Illustrator"],
   },
 ];
+export const projectsFiltersBlocks = [
+  {
+    label: "Project Type",
+    filters: [
+      "Web App",
+      "CLI Tool",
+      "Library",
+      "API Service",
+      "Portfolio Project",
+      "Experiment",
+    ],
+  },
+  {
+    label: "Main Technology",
+    filters: ["JavaScript", "TypeScript", "Python", "Go", "Rust"],
+  },
+  {
+    label: "Framework / Library",
+    filters: ["React", "Next.js", "Express", "Django", "Vue", "Svelte"],
+  },
+  {
+    label: "License",
+    filters: ["MIT", "Apache 2.0", "GPL", "Unlicense", "Other"],
+  },
+  {
+    label: "Last Updated",
+    filters: ["This Month", "Last 3 Months", "Last Year", "Older"],
+  },
+  {
+    label: "Stars",
+    filters: ["< 10", "10–50", "50–200", "200+"],
+  },
+  {
+    label: "Hosting / Deployment",
+    filters: ["Vercel", "Netlify", "AWS", "Heroku", "Other"],
+  },
+];
+
 export const certificatesItems = [
   {
     image: tsCert,

@@ -1,4 +1,4 @@
-import Section from "../../section/section";
+import Section from "../../general-use/section/section";
 import classes from "./price.module.scss";
 
 export default function Price() {

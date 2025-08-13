@@ -1,7 +1,6 @@
 "use client";
 
 import { useDispatch, useSelector } from "react-redux";
-import { filtersBlocks } from "../../SideData";
 import BlockAccordion from "./block-accordion";
 import BlockContent from "./block-content";
 import classes from "./filters.module.scss";
@@ -9,9 +8,14 @@ import { RootState } from "@/store/store";
 import CloseIcon from "@/components/UI/icons/close-icon";
 import { toggleFiltersBlockActive } from "@/store/filters-slice";
 
-export default function Filters() {
-  const blocks = filtersBlocks;
-
+export default function Filters({
+  filters,
+}: {
+  filters: {
+    label: string;
+    filters: string[];
+  }[];
+}) {
   const { isFiltersBlockActive } = useSelector(
     (state: RootState) => state.filters
   );
@@ -32,7 +36,7 @@ export default function Filters() {
         </span>
       </div>
       <ul>
-        {blocks.map(({ label, filters }) => {
+        {filters.map(({ label, filters }) => {
           return (
             <BlockAccordion key={label} blockName={label}>
               <BlockContent label={label} filters={filters} />
