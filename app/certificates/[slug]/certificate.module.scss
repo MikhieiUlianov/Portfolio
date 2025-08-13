@@ -1,0 +1,80 @@
+@use "../../../sass/base/variables.scss" as *;
+.certificate {
+  margin-top: 50px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  transition: transform 0.25s, box-shadow 0.25s;
+  overflow: hidden;
+  box-shadow: 0 10px 24px #d7f5ff;
+  transition: all 0.5s;
+  padding: 15px;
+  header {
+    h1 {
+      text-align: center;
+      font-weight: 600;
+      font-size: 20px;
+    }
+    img {
+      width: auto;
+      height: auto;
+    }
+  }
+  p {
+    text-align: center;
+    font-size: 16px;
+    font-weight: 500;
+    margin-top: 15px;
+  }
+  .link {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    a {
+      font-weight: 600;
+    }
+  }
+  div {
+    margin-top: 15px;
+    text-align: center;
+    span {
+      font-weight: 600;
+    }
+  }
+}
+@media (min-width: 768px) {
+  .certificate {
+    margin-top: 100px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .certificate {
+    padding: 30px;
+    margin-bottom: 150px;
+    header {
+      h1 {
+        font-weight: 700;
+        font-size: 30px;
+      }
+      img {
+        margin: 0 auto;
+        cursor: pointer;
+        transition: all 0.5s;
+        &:hover {
+          transform: translateY(-6px);
+          box-shadow: 0 15px 24px $orange;
+        }
+      }
+    }
+    p {
+      font-size: 20px;
+      margin-top: 20px;
+    }
+    .link {
+      font-size: 18px;
+      a {
+        font-weight: 600;
+      }
+    }
+  }
+}

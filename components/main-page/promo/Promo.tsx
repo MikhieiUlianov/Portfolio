@@ -40,8 +40,8 @@ export default function Promo() {
             <StyledButton href="/my-tools" className={classes.link}>
               My Tools
             </StyledButton>
-            <StyledButton href="/about" className={classes.link}>
-              About Me
+            <StyledButton href="/certificates" className={classes.link}>
+              Certificates
             </StyledButton>
           </div>
         </motion.div>

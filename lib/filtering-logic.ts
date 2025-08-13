@@ -8,6 +8,7 @@ type ToolsType = {
   alt: string;
   title: string;
   description: string;
+  date: string;
 }[];
 function normalizeString(str: string) {
   return str

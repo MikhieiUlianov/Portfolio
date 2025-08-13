@@ -27,7 +27,17 @@ import marvelImg from "../public/img/projects/marvel.jpeg";
 import ipadImg from "../public/img/projects/ipad.jpeg";
 import tocarImg from "../public/img/projects/tocar.svg";
 
-// Example structure for repeated data (social links, menu items, etc.)
+//certificates
+
+import reactCert from "../public/img/certificates/react-the-complete-guide-incl-redux.jpg";
+import nextJsCert from "../public/img/certificates/nextjs-react-the-complete-guide.jpg";
+import webDevCert from "../public/img/certificates/webdeveloper.jpg";
+import jsCert from "../public/img/certificates/javascript_full.jpg";
+import pythonCert from "../public/img/certificates/bestpython.jpg";
+import tsCert from "../public/img/certificates/understanding-typescript.jpg";
+import tsReactCert from "../public/img/certificates/react-typescript-the-practical-guide.jpg";
+
+/* // Example structure for repeated data (social links, menu items, etc.)
 export const sidePanelLinks = [
   {
     href: "https://github.com/MikhieiUlianov",
@@ -63,7 +73,7 @@ export const contactsSocialLinks = [
     label: "Instagram",
   },
 ];
-
+ */
 // Example for menu items
 export const menuItems = [
   { href: "#promo", label: "Home" },
@@ -272,5 +282,70 @@ export const filtersBlocks = [
   {
     label: "Design Tools",
     filters: ["Figma", "Adobe XD", "Photoshop", "Illustrator"],
+  },
+];
+export const certificatesItems = [
+  {
+    image: tsCert,
+    title: "Understanding TypeScript",
+    description:
+      "With help of this course, I am now able to write cleaner, more robust TypeScript code, which is easier to read, debug, and maintain in large projects.",
+    link: "https://www.udemy.com/course/understanding-typescript/",
+    slug: "understanding-typescript",
+    rating: 5,
+  },
+  {
+    image: reactCert,
+    title: "React - The Complete Guide 2025 (incl. Next.js, Redux)",
+    description:
+      "This comprehensive course deepened my understanding of React and related technologies like Next.js and Redux, enabling me to build scalable and performant web applications.",
+    link: "https://www.udemy.com/course/react-the-complete-guide-incl-redux/",
+    slug: "react-the-complete-guide-incl-redux",
+    rating: 5,
+  },
+  {
+    image: webDevCert,
+    title: "WEB-разработчик",
+    description:
+      "This course helped me master HTML, CSS, and responsive design principles to create beautiful, user-friendly interfaces that look great on both desktop and mobile devices.",
+    link: "https://www.udemy.com/course/webdeveloper/",
+    slug: "webdeveloper",
+    rating: 5,
+  },
+  {
+    image: pythonCert,
+    title: "Полное руководство по Python 3: от новичка до специалиста",
+    description:
+      "My first programming course ever — it introduced me to Python fundamentals and best practices, setting a strong foundation for further learning in backend and automation.",
+    link: "https://www.udemy.com/course/bestpython/",
+    slug: "bestpython",
+    rating: 3.5,
+  },
+  {
+    image: jsCert,
+    title: "Полный курс по JavaScript + React - с нуля до результата",
+    description:
+      "This course sparked my passion for web development with clear explanations, practical examples, and a great tutor who made complex topics accessible and fun.",
+    link: "https://www.udemy.com/course/javascript_full/",
+    slug: "javascript_full",
+    rating: 5,
+  },
+  {
+    image: nextJsCert,
+    title: "Next.js 15 & React - The Complete Guide",
+    description:
+      "Learning Next.js here helped me optimize app performance with SSR, SSG, and image optimization, as well as improve SEO and user experience in React projects.",
+    link: "https://www.udemy.com/course/nextjs-react-the-complete-guide/",
+    slug: "nextjs-react-the-complete-guide",
+    rating: 5,
+  },
+  {
+    image: tsReactCert,
+    title: "React & TypeScript - The Practical Guide",
+    description:
+      "This course gave me a solid foundation on where and how to use TypeScript with React, improving type safety and code reliability in my applications.",
+    link: "https://www.udemy.com/course/react-typescript-the-practical-guide/",
+    slug: "react-typescript-the-practical-guide",
+    rating: 5,
   },
 ];
