@@ -1,3 +1,4 @@
+import Section from "@/components/general-use/section/section";
 import { ReactNode } from "react";
 
 export default function MyProjectsLayout({
@@ -6,7 +7,7 @@ export default function MyProjectsLayout({
   children: ReactNode;
 }) {
   return (
-    <div>
+    <Section>
       <h2
         className="title title_fz16 title__section-title"
         style={{ marginTop: 50 }}
@@ -20,6 +21,6 @@ export default function MyProjectsLayout({
 
       <div className="divider"></div>
       {children}
-    </div>
+    </Section>
   );
 }
