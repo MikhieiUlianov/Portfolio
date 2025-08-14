@@ -8,6 +8,7 @@ type ListTemplateProps = {
   children: ReactNode;
   isFinished?: boolean;
   removeButton?: boolean;
+  isButtonDisabled?: boolean;
 };
 
 export default function ListTemplate({
@@ -15,12 +16,17 @@ export default function ListTemplate({
   children,
   isFinished,
   removeButton,
+  isButtonDisabled,
 }: ListTemplateProps) {
   return (
     <Section>
       <ul className={classes.list}>{children}</ul>
       {!isFinished && !removeButton && (
-        <StyledButton onClick={buttonAction} className="margin">
+        <StyledButton
+          disabled={isButtonDisabled}
+          onClick={buttonAction}
+          className="margin"
+        >
           Load More
         </StyledButton>
       )}

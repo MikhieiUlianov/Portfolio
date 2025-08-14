@@ -4,7 +4,11 @@ import { projectsFiltersBlocks } from "@/components/SideData";
 export default function MyProjectsFilters() {
   return (
     <Section>
-      <Filters filters={projectsFiltersBlocks} />
+      <Filters
+        activeFiltersBlock="projectsAccordion"
+        filtersArrName="projectsFilters"
+        filters={projectsFiltersBlocks}
+      />
     </Section>
   );
 }

@@ -1,14 +1,14 @@
 import { configureStore } from "@reduxjs/toolkit";
 
 import menu from "./menu-slice";
-import filters from "./filters-slice";
-import loadMore from "./load-more";
+import accordion from "./accordions-slice";
+import projects from "./projects-slice";
 
 const store = configureStore({
   reducer: {
     menu,
-    filters,
-    loadMore,
+    accordion,
+    projects,
   },
 });
 export default store;

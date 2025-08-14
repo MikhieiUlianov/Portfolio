@@ -2,15 +2,20 @@
 
 import classes from "./filters.module.scss";
 import { useDispatch, useSelector } from "react-redux";
-import { setActiveFilter } from "@/store/filters-slice";
+import { normalizeString, setActiveFilters } from "@/store/accordions-slice";
 import { RootState } from "@/store/store";
 
 type BlockContentProps = {
   label: string;
   filters: string[];
+  filtersArrName: "projectsFilters" | "toolsFilters";
 };
 
-export default function BlockContent({ label, filters }: BlockContentProps) {
+export default function BlockContent({
+  label,
+  filters,
+  filtersArrName,
+}: BlockContentProps) {
   const dispatch = useDispatch();
 
   return (
@@ -18,10 +23,9 @@ export default function BlockContent({ label, filters }: BlockContentProps) {
       <ul className={classes["filter-items"]}>
         {filters.map((filter) => {
           const isActive = useSelector(
-            (state: RootState) => state.filters.activeFilters
-          ).includes(filter.trim().toLowerCase());
+            (state: RootState) => state.accordion.activeFilters[filtersArrName]
+          ).includes(normalizeString(filter));
           console.log(isActive);
-
           return (
             <li
               className={`${classes["filter-item"]} ${
@@ -33,7 +37,11 @@ export default function BlockContent({ label, filters }: BlockContentProps) {
                 className={`${classes.filtersCategoryButton} ${
                   isActive ? classes.active : ""
                 }`}
-                onClick={() => dispatch(setActiveFilter(filter))}
+                onClick={() =>
+                  dispatch(
+                    setActiveFilters({ filtersArr: filtersArrName, filter })
+                  )
+                }
               >
                 {filter}
               </button>

@@ -1,23 +1,15 @@
 "use client";
 
 import slugify from "slugify";
-import { useEffect, useState } from "react";
-
-import { getGitReposData, GitHubRepo } from "@/lib/projects-action";
 import Section from "@/components/general-use/section/section";
 import Slider from "@/utils/slider/slider";
 import classes from "./project.module.scss";
+import { useSelector } from "react-redux";
+import { RootState } from "@/store/store";
 
 export default function ProjectPage({ params }: { params: { slug: string } }) {
-  const [allProjects, setAllProjects] = useState<GitHubRepo[]>([]);
   const slug = params.slug;
-  useEffect(() => {
-    async function getProjects() {
-      const res = await getGitReposData();
-      setAllProjects(res);
-    }
-    getProjects();
-  }, []);
+  const allProjects = useSelector((state: RootState) => state.projects.repos);
 
   const matchedProject = allProjects.find(
     (p) => slugify(p.name, { lower: true }) === slug

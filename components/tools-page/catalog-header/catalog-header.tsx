@@ -1,11 +1,16 @@
 "use client";
 
 import { useDispatch, useSelector } from "react-redux";
-import {
+/* import {
   changeInputValue,
   toggleFiltersBlockActive,
   toggleSearchBlockActive,
-} from "@/store/filters-slice";
+} from "@/store/filters-slice"; */
+import {
+  changeInputValue,
+  toggleAccordionBlockActive,
+  toggleSearchBlockActive,
+} from "@/store/accordions-slice";
 import { RootState } from "@/store/store";
 import classes from "./catalog-header.module.scss";
 import { useEffect, useRef, useState } from "react";
@@ -13,10 +18,12 @@ import { motion } from "framer-motion";
 
 export default function CatalogHeader() {
   const dispatch = useDispatch();
-  const { isSearchBlockActive, isFiltersBlockActive, inputValue } = useSelector(
+  /* const { isSearchBlockActive, isFiltersBlockActive, inputValue } = useSelector(
     (state: RootState) => state.filters
+  ); */
+  const { isSearchBlockActive, inputValue, isFiltersBlockActive } = useSelector(
+    (state: RootState) => state.accordion
   );
-
   const [enteredValue, setEnteredValue] = useState("");
   const timerRef = useRef<NodeJS.Timeout | null>(null);
 
@@ -40,10 +47,10 @@ export default function CatalogHeader() {
     <header className={classes.header}>
       <div className={classes.actions}>
         <motion.button
-          className={isFiltersBlockActive ? classes.active : ""}
+          className={isFiltersBlockActive.toolsAccordion ? classes.active : ""}
           whileHover={{ scale: 1.1 }}
           transition={{ type: "spring", stiffness: 300 }}
-          onClick={() => dispatch(toggleFiltersBlockActive())}
+          onClick={() => dispatch(toggleAccordionBlockActive("toolsAccordion"))}
         >
           Filters
         </motion.button>

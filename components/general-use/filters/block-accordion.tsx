@@ -3,9 +3,9 @@ import { ReactNode } from "react";
 
 import classes from "./filters.module.scss";
 import { useDispatch, useSelector } from "react-redux";
-import { setActiveFilterAccordion } from "@/store/filters-slice";
 import OpenIcon from "@/components/UI/icons/open-icon";
 import { RootState } from "@/store/store";
+import { normalizeString, setActiveAccordion } from "@/store/accordions-slice";
 
 export default function BlockAccordion({
   blockName,
@@ -16,7 +16,7 @@ export default function BlockAccordion({
 }) {
   const dispatch = useDispatch();
   const isBlockActive = useSelector((state: RootState) =>
-    state.filters.activeAccordions.includes(blockName.trim().toLowerCase())
+    state.accordion.activeAccordions.includes(normalizeString(blockName))
   );
 
   return (
@@ -25,7 +25,7 @@ export default function BlockAccordion({
         className={classes["filter-header"]}
         onClick={() => {
           console.log("click");
-          dispatch(setActiveFilterAccordion(blockName.trim().toLowerCase()));
+          dispatch(setActiveAccordion(blockName.trim().toLowerCase()));
         }}
       >
         <div>{blockName}</div>

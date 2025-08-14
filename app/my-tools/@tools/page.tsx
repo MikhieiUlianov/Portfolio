@@ -2,7 +2,7 @@
 
 import classes from "./tools.module.scss";
 import { skillsItems } from "@/components/SideData";
-import useFilteredTools from "@/lib/filtering-logic";
+import { useFilteredTools } from "@/lib/filtering-logic";
 import Image from "next/image";
 import SkillItem from "@/components/skills/skill-item";
 import { useState } from "react";
@@ -22,7 +22,6 @@ export default function Tools() {
       setSkillsAmount((prev) => ({ ...prev, finished: true }));
     }
   }
-
   return (
     <ListTemplate
       buttonAction={handleLoadMore}

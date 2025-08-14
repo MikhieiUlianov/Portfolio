@@ -1,7 +1,6 @@
-import Filters from "@/components/general-use/filters/filters";
 import Tools from "./@tools/page";
 import CatalogHeader from "@/components/tools-page/catalog-header/catalog-header";
-import { toolsFiltersBlocks } from "@/components/SideData";
+import FiltersPage from "./@filters/page";
 
 export const metadata = {
   title: "My tools page",
@@ -12,7 +11,7 @@ export default function ToolsListPage() {
   return (
     <div className="blocks">
       <aside>
-        <Filters filters={toolsFiltersBlocks} />
+        <FiltersPage />
       </aside>
       <main style={{ marginBottom: 50 }}>
         <CatalogHeader />
