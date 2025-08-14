@@ -12,15 +12,12 @@ export type GitHubRepo = {
   updated_at: string;
 };
 
-export async function getGitReposData(startingIndex: number) {
-  const res = await fetch(
-    `https://api.github.com/users/MikhieiUlianov/repos?per_page=3&page=${startingIndex}`,
-    {
-      headers: {
-        Authorization: `token ${process.env.GITHUB_TOKEN}`,
-      },
-    }
-  );
+export async function getGitReposData() {
+  const res = await fetch(`https://api.github.com/users/MikhieiUlianov/repos`, {
+    headers: {
+      Authorization: `token ${process.env.GITHUB_TOKEN}`,
+    },
+  });
 
   if (!res.ok) throw new Error("Fetching repos failed.");
 

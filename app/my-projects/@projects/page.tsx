@@ -1,33 +1,18 @@
-"use client";
-
 import Image from "next/image";
-import { useEffect, useState } from "react";
-import { getGitReposData, GitHubRepo } from "@/lib/projects-action";
+import { getGitReposData } from "@/lib/projects-action";
 import ListTemplate from "@/components/UI/items-list/items-list";
 import classes from "./projects.module.scss";
+import Link from "next/link";
+import slugify from "slugify";
+import StyledButton from "@/components/UI/styled-button/styled-button";
 
-export default function MyProjectsList() {
-  const [page, setPage] = useState(1);
-  const [isFinished, setIsFinished] = useState(false);
-  const [repos, setRepos] = useState<GitHubRepo[]>([]);
-
-  useEffect(() => {
-    async function getData() {
-      const newRepos = await getGitReposData(page);
-      setRepos((oldRepos) => [...oldRepos, ...newRepos]);
-      if (newRepos.length < 3) setIsFinished(true);
-    }
-
-    getData();
-  }, [page]);
-
+export default async function MyProjectsList() {
+  const repos = await getGitReposData();
   if (!repos) return <p>Loading...</p>;
   return (
-    <ListTemplate
-      buttonAction={() => setPage((prev) => prev + 1)}
-      isFinished={isFinished}
-    >
+    <ListTemplate removeButton>
       {repos.map((repo) => {
+        const slug = slugify(repo.name, { lower: true });
         return (
           <li key={`${repo.name}-${repo.html_url}`} className={classes.project}>
             <Image
@@ -36,14 +21,21 @@ export default function MyProjectsList() {
               width={100}
               height={100}
             />
-            <a href={repo.html_url} rel="noopener noreferrer">
-              <h3>{repo.name}</h3>
-              <p>{repo.description}</p>
-              <p>
-                Language: <span>{repo.language}</span>
-              </p>
-              <p>Stars: {repo.stargazers_count}</p>
-            </a>
+            <h3>{repo.name}</h3>
+            <p>{repo.description}</p>
+            <p>
+              Language: <span>{repo.language}</span>
+            </p>
+            <p>Stars: {repo.stargazers_count}</p>
+            <div className={classes.actions}>
+              <a className={classes.repoLink} href={repo.html_url}>
+                See Repo
+              </a>
+
+              <StyledButton href={`/my-projects/${slug}`}>
+                See Details
+              </StyledButton>
+            </div>
           </li>
         );
       })}

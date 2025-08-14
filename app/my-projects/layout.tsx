@@ -12,11 +12,11 @@ export default function MyProjectsLayout({
         className="title title_fz16 title__section-title"
         style={{ marginTop: 50 }}
       >
-        Skills
+        Projects
       </h2>
 
       <div className="title title_fz36 title__section-subtitle">
-        What I use in my work
+        My projects
       </div>
 
       <div className="divider"></div>

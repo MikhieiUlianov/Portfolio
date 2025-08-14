@@ -4,20 +4,22 @@ import StyledButton from "@/components/UI/styled-button/styled-button";
 import { ReactNode } from "react";
 
 type ListTemplateProps = {
-  buttonAction: () => void;
+  buttonAction?: () => void;
   children: ReactNode;
-  isFinished: boolean;
+  isFinished?: boolean;
+  removeButton?: boolean;
 };
 
 export default function ListTemplate({
   buttonAction,
   children,
   isFinished,
+  removeButton,
 }: ListTemplateProps) {
   return (
     <Section>
       <ul className={classes.list}>{children}</ul>
-      {!isFinished && (
+      {!isFinished && !removeButton && (
         <StyledButton onClick={buttonAction} className="margin">
           Load More
         </StyledButton>
