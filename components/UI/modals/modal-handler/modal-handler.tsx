@@ -34,7 +34,7 @@ export default function ModalHandler() {
   }
   function handleClose() {
     modalRef.current?.close();
-    router.push(window.location.pathname, { scroll: false }); // Removes ?modal=...
+    router.push(window.location.pathname, { scroll: false });
   }
   return (
     <>
@@ -49,14 +49,6 @@ export default function ModalHandler() {
           </dialog>
         </>
       )}
-      {/*    {activeSigment && (
-        <>
-          <ModalBackdrop />
-          <dialog className={classes.modal} ref={modalRef}>
-            {renderedModal()}
-          </dialog>
-        </>
-      )}  */}
     </>
   );
 }
