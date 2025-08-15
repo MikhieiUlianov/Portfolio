@@ -1,11 +1,9 @@
-@use "../../../sass/base/variables.scss" as *;
+@use "@/sass/base/variables.scss" as *;
 .certificate {
   margin-top: 50px;
-  /*   border: 1px solid #ddd; */
   border-radius: 10px;
   transition: transform 0.25s, box-shadow 0.25s;
   overflow: hidden;
-  /*   box-shadow: 0 10px 24px #d7f5ff; */
   transition: all 0.5s;
   padding: 15px;
   header {

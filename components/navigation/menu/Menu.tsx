@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import Link from "next/link";
 import classes from "./menu.module.scss";
 import CloseIcon from "@/components/UI/icons/close-icon";
 
@@ -22,23 +23,14 @@ export default function Menu() {
           </div>
           <nav>
             <ul className={classes.list}>
-              <li className={classes.link}>
-                <a href="#">About me</a>
+              <li className={classes.link} onClick={() => setActive(false)}>
+                <Link href="/my-projects">My Projects</Link>
               </li>
-              <li className={classes.link}>
-                <a href="#">My experience</a>
+              <li className={classes.link} onClick={() => setActive(false)}>
+                <Link href="/certificates">My Certificates</Link>
               </li>
-              <li className={classes.link}>
-                <a href="#">My skills</a>
-              </li>
-              <li className={classes.link}>
-                <a href="#">My works</a>
-              </li>
-              <li className={classes.link}>
-                <a href="#">Price list</a>
-              </li>
-              <li className={classes.link}>
-                <a href="#">Contacts</a>
+              <li className={classes.link} onClick={() => setActive(false)}>
+                <Link href="/my-tools">My Tools</Link>
               </li>
             </ul>
           </nav>

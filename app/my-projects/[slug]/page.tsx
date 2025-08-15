@@ -6,6 +6,7 @@ import Slider from "@/utils/slider/slider";
 import classes from "./project.module.scss";
 import { useSelector } from "react-redux";
 import { RootState } from "@/store/store";
+import { notFound } from "next/navigation";
 
 export default function ProjectPage({ params }: { params: { slug: string } }) {
   const slug = params.slug;
@@ -15,9 +16,7 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
     (p) => slugify(p.name, { lower: true }) === slug
   );
 
-  if (!matchedProject) {
-    return <p>Loading...</p>;
-  }
+  if (!matchedProject) return notFound();
   return (
     <Section sectionClass={classes.project}>
       <h1>{matchedProject.name}</h1>

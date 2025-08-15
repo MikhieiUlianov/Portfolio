@@ -5,7 +5,7 @@ import StyledButton from "@/components/UI/styled-button/styled-button";
 import Link from "next/link";
 import Image from "next/image";
 export default function Header() {
-  const [logged, setLogged] = useState(true);
+  const [logged, setLogged] = useState(false);
 
   return (
     <div className={classes.header}>
@@ -43,7 +43,10 @@ export default function Header() {
             </div>
           ) : (
             <div className={classes.login}>
-              <StyledButton className="header__login-btn">
+              <StyledButton
+                className="header__login-btn"
+                href={"/?modal=login"}
+              >
                 Login
                 <Image
                   style={{ marginLeft: 10 }}
@@ -53,7 +56,10 @@ export default function Header() {
                   height={20}
                 />
               </StyledButton>
-              <StyledButton className="header__login-btn" id="signBtn">
+              <StyledButton
+                href={"/?modal=signup"}
+                className="header__login-btn"
+              >
                 Sign up
                 <Image
                   style={{ marginLeft: 10 }}

@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
 import "./globals.scss";
-import ReduxProvider from "@/store/redux-provider";
+import { ReactNode } from "react";
 import Header from "@/components/navigation/header/header";
-import Menu from "@/components/navigation/menu/Menu";
 import Footer from "@/components/navigation/footer/Footer";
+import Menu from "@/components/navigation/menu/Menu";
+import ReduxProvider from "@/store/redux-provider";
+import ModalHandler from "@/components/UI/modals/modal-handler/modal-handler";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -13,7 +15,7 @@ export const metadata: Metadata = {
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode;
+  children: ReactNode;
 }>) {
   return (
     <html lang="en">
@@ -21,6 +23,7 @@ export default function RootLayout({
         <ReduxProvider>
           <Header />
           <Menu />
+          <ModalHandler />
           {children}
           <Footer />
         </ReduxProvider>

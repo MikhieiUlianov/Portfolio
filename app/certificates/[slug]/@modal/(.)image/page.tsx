@@ -1,9 +1,8 @@
 import { notFound } from "next/navigation";
 import { certificatesItems } from "@/components/SideData";
-import ModalBackdrop from "@/components/modal-backdrop";
+import ModalBackdrop from "@/components/UI/modals/modal-backdrop";
 import Image from "next/image";
 import classes from "./modal.module.scss";
-<ModalBackdrop />;
 
 export default async function InterceptedImagePage({
   params,
