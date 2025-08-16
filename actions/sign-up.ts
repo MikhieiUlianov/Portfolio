@@ -1,5 +1,9 @@
 "use server";
 
+import { createAuthSession } from "@/lib/auth";
+import { hashPassword } from "@/lib/hash";
+import { createUser } from "@/lib/user";
+
 export type SignUpFormValues = {
   email: string;
   name: string;
@@ -48,5 +52,27 @@ export async function signup(formData: SignUpFormValues) {
     return { success: false, errors };
   }
 
-  return { success: true };
+  const hashedPassword = await hashPassword(password);
+  try {
+    const insertedUserId = createUser(email, hashedPassword, name);
+    await createAuthSession(insertedUserId.toString());
+    return { success: true };
+  } catch (error) {
+    const err = error as { code?: string };
+    if (err.code === "SQLITE_CONSTRAINT_UNIQUE") {
+      return {
+        success: false,
+        errors: {
+          email:
+            "It seems like an account for the chosen email already exists.",
+        },
+      };
+    }
+    return {
+      success: false,
+      errors: {
+        general: "Something went wrong. Please try again later.",
+      },
+    };
+  }
 }

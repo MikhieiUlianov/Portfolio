@@ -7,9 +7,10 @@ import sql from "better-sqlite3";
 const db = sql("users.db");
 
 db.exec(`CREATE TABLE IF NOT EXISTS users (
-  id INTEGER PRIMARY KEY
-  email TEXT UNIQUE
-  password TEXT
+  id INTEGER PRIMARY KEY,
+  email TEXT UNIQUE,
+  password TEXT NOT NULL,
+  name TEXT NOT NULL
   );
 `);
 

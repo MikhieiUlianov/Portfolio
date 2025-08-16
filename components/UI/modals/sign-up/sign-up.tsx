@@ -6,8 +6,15 @@ import classes from "../modal-handler.module.scss";
 import Link from "next/link";
 import { useForm } from "react-hook-form";
 import { signup, SignUpFormValues } from "@/actions/sign-up";
+import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 export default function SignUpModal() {
+  const [isError, setIsError] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const router = useRouter();
+
   const {
     register,
     setError,
@@ -15,15 +22,23 @@ export default function SignUpModal() {
     handleSubmit,
     reset,
   } = useForm<SignUpFormValues>();
+
   async function onSubmit(formData: SignUpFormValues) {
+    setIsLoading(true);
     const result = await signup(formData);
-    if (!result.success && result.errors) {
-      Object.entries(result.errors).map(([field, message]) => {
+    setIsError(result.success === false);
+    setIsSuccess(result.success === true);
+    if (result?.errors) {
+      Object.entries(result.errors).forEach(([field, message]) => {
         setError(field as keyof SignUpFormValues, { type: "server", message });
       });
-    } else {
+    } else if (result.success) {
       reset();
+      setTimeout(() => {
+        router.push("/");
+      }, 5000);
     }
+    setIsLoading(false);
   }
   return (
     <div>
@@ -72,7 +87,13 @@ export default function SignUpModal() {
           <Link href="/policy">the privacy policy</Link>
         </Input>
 
-        <StyledButton>Sign Up</StyledButton>
+        <StyledButton disabled={isLoading}>Sign Up</StyledButton>
+        {isError && <p style={{ color: "red" }}>Ops! Something went wrong.</p>}
+        {isSuccess && (
+          <p style={{ color: "green", textAlign: "center" }}>
+            Success! now you have access to all futures!
+          </p>
+        )}
         <div className={classes.login}>
           Already have an account?
           <Link href="/?modal=login">Log In</Link>
