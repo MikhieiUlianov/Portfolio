@@ -1,9 +1,23 @@
-import { MongoClient } from "mongodb";
+/* npm install --save-dev @types/node
+ */
+/* import Database from "better-sqlite3";
+const db = new Database('db/mydatabase.db') */
+import sql from "better-sqlite3";
 
-export async function connectToDataBase() {
-  const connectionString = `mongodb+srv://${process.env.mongodb_username}:${process.env.mongodb_password}@${process.env.mongodb_clustername}.ybqit5w.mongodb.net/${process.env.mongodb_database}?retryWrites=true&w=majority&appName=Cluster0`;
-  const client = await MongoClient.connect(connectionString);
-  const db = client.db();
+const db = sql("users.db");
 
-  return db;
-}
+db.exec(`CREATE TABLE IF NOT EXISTS users (
+  id INTEGER PRIMARY KEY
+  email TEXT UNIQUE
+  password TEXT
+  );
+`);
+
+db.exec(`CREATE TABLE IF NOT EXISTS sessions (
+  id TEXT NOT NULL PRIMARY KEY,
+  expires_at INTEGER NOT NULL,
+  user_id TEXT NOT NULL,
+  FOREIGN KEY (user_id) REFERENCES users(id)
+)`);
+
+export default db;

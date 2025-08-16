@@ -5,16 +5,25 @@ import StyledButton from "@/components/UI/styled-button/styled-button";
 import classes from "../modal-handler.module.scss";
 import Link from "next/link";
 import { useForm } from "react-hook-form";
+import { signup, SignUpFormValues } from "@/actions/sign-up";
 
 export default function SignUpModal() {
   const {
     register,
+    setError,
     formState: { errors },
     handleSubmit,
     reset,
-  } = useForm();
-  function onSubmit(formData) {
-    console.log(formData);
+  } = useForm<SignUpFormValues>();
+  async function onSubmit(formData: SignUpFormValues) {
+    const result = await signup(formData);
+    if (!result.success && result.errors) {
+      Object.entries(result.errors).map(([field, message]) => {
+        setError(field as keyof SignUpFormValues, { type: "server", message });
+      });
+    } else {
+      reset();
+    }
   }
   return (
     <div>
@@ -60,7 +69,7 @@ export default function SignUpModal() {
           errors={errors}
         >
           I agree with
-          <a href="/policy.html">the privacy policy</a>
+          <Link href="/policy">the privacy policy</Link>
         </Input>
 
         <StyledButton>Sign Up</StyledButton>

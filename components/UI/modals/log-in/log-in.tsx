@@ -6,14 +6,20 @@ import classes from "../modal-handler.module.scss";
 import Link from "next/link";
 import { useForm } from "react-hook-form";
 
+type LogInFormValues = {
+  email: string;
+  password: string;
+  checkbox: boolean;
+};
+
 export default function SignUpModal() {
   const {
     register,
     formState: { errors },
     handleSubmit,
     reset,
-  } = useForm();
-  function onSubmit(formData) {
+  } = useForm<LogInFormValues>();
+  function onSubmit(formData: LogInFormValues) {
     console.log(formData);
   }
   return (

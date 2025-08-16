@@ -20,10 +20,3 @@ const nextConfig = (phase: string): NextConfig => {
 };
 
 export default nextConfig;
-
-/* env: {
-      mongodb_username: "mik",
-      mongodb_password: "wrihnJumnhRf5d0u",
-      mongodb_clustername: "cluster0",
-      mongodb_database: isDev ? "my-site-dev" : "my-site",
-    }, */

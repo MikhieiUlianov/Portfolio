@@ -4,15 +4,22 @@ import Section from "@/components/general-use/section/section";
 import Input from "@/components/UI/input/input";
 import StyledButton from "@/components/UI/styled-button/styled-button";
 import { useForm } from "react-hook-form";
+
+type ChangePassFormValues = {
+  email: string;
+  password: string;
+  checkbox: boolean;
+};
+
 export default function ChangePassModal() {
   const {
     register,
     formState: { errors },
     handleSubmit,
     reset,
-  } = useForm();
+  } = useForm<ChangePassFormValues>();
 
-  function onSubmit(formData) {
+  function onSubmit(formData: ChangePassFormValues) {
     console.log(formData);
   }
   return (
@@ -21,8 +28,8 @@ export default function ChangePassModal() {
       <h3>Chnage your password to for your account!</h3>
       <form onSubmit={handleSubmit(onSubmit)}>
         <Input
-          name="name"
-          placeholder="Name"
+          name="email"
+          placeholder="Email"
           type="email"
           label="Email"
           register={register}
