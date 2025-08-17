@@ -11,3 +11,9 @@ export function createUser(email: string, password: string, name: string) {
 export function getUserByEmail(email: string) {
   return db.prepare(`SELECT * FROM users WHERE email = ?`).get(email);
 }
+
+export function updatePassword(password: string, email: string) {
+  return db
+    .prepare(`UPDATE users SET password = ? WHERE email = ?`)
+    .run(password, email);
+}
