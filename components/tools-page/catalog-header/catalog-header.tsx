@@ -1,11 +1,6 @@
 "use client";
 
 import { useDispatch, useSelector } from "react-redux";
-/* import {
-  changeInputValue,
-  toggleFiltersBlockActive,
-  toggleSearchBlockActive,
-} from "@/store/filters-slice"; */
 import {
   changeInputValue,
   toggleAccordionBlockActive,
@@ -18,10 +13,7 @@ import { motion } from "framer-motion";
 
 export default function CatalogHeader() {
   const dispatch = useDispatch();
-  /* const { isSearchBlockActive, isFiltersBlockActive, inputValue } = useSelector(
-    (state: RootState) => state.filters
-  ); */
-  const { isSearchBlockActive, inputValue, isFiltersBlockActive } = useSelector(
+  const { isSearchBlockActive, isFiltersBlockActive } = useSelector(
     (state: RootState) => state.accordion
   );
   const [enteredValue, setEnteredValue] = useState("");

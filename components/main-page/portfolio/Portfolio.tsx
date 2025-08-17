@@ -1,10 +1,34 @@
+"use client";
+
 import classes from "./portfolio.module.scss";
-import { portfolioItems } from "../../SideData";
 import Section from "@/components/general-use/section/section";
 import PortfolioProject from "./portfolio-project";
-
+import { getGitReposData } from "@/lib/projects-action";
+import StyledButton from "@/components/UI/styled-button/styled-button";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { setProjects, setLoading } from "@/store/projects-slice";
+import { GitHubRepo } from "@/lib/projects-action";
+import { RootState } from "@/store/store";
 export default function Portfolio() {
-  const projects = portfolioItems;
+  const dispatch = useDispatch();
+  const { repos } = useSelector((state: RootState) => state.projects);
+
+  useEffect(() => {
+    async function getRepos() {
+      dispatch(setLoading(true));
+      try {
+        const newRepos: GitHubRepo[] = await getGitReposData(1);
+        dispatch(setProjects(newRepos));
+      } catch (error) {
+        error instanceof Error ? error.message : "Something went wrong.";
+      } finally {
+        dispatch(setLoading(false));
+      }
+    }
+
+    getRepos();
+  }, []);
 
   return (
     <Section sectionClass={classes.portfolio}>
@@ -13,14 +37,13 @@ export default function Portfolio() {
       <div className="divider"></div>
 
       <div className={classes.wrapper}>
-        {projects.map((project, i) => (
-          <PortfolioProject
-            key={`${project.img}-${i}`}
-            {...project}
-            index={i}
-          />
+        {repos.map((repo, i) => (
+          <PortfolioProject key={`${i}-${repo.full_name}`} repo={repo} />
         ))}
       </div>
+      <StyledButton href={"/my-projects"} className={classes.seeMore}>
+        See More
+      </StyledButton>
     </Section>
   );
 }

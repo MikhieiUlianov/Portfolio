@@ -11,7 +11,7 @@ export default async function Header() {
     <div className={classes.header}>
       <div className={classes.wrapper}>
         <div className={classes.find}>
-          <StyledButton>About</StyledButton>
+          <StyledButton href="/">Go To Main</StyledButton>
           <StyledButton href="/my-projects">My Projects</StyledButton>
         </div>
 
@@ -28,9 +28,6 @@ export default async function Header() {
         <div className={classes.desktop}>
           {accountExists.user ? (
             <div className={classes.logged}>
-              {/* <div className={classes["logged-block"]}>
-                <div className={`${classes["logged-text"]}`}>Favourites</div>
-              </div> */}
               <form action={logout}>
                 <StyledButton>Logout</StyledButton>
               </form>

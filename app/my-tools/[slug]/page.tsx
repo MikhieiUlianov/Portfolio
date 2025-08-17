@@ -1,5 +1,20 @@
 import ToolContent from "@/components/tool-page/tool-content/tool-content";
 import { getToolData } from "@/lib/tools";
+import { Suspense } from "react";
+import Loading from "@/components/UI/Loading";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: { slug: string };
+}) {
+  const toolData = getToolData(params.slug);
+
+  return {
+    title: toolData.title,
+    description: toolData.description || "My projects page which I worked on.",
+  };
+}
 
 export default async function ToolPage({
   params,
@@ -9,11 +24,13 @@ export default async function ToolPage({
   try {
     const toolData = getToolData(params.slug);
     return (
-      <ToolContent
-        img={toolData.img}
-        title={toolData.title}
-        content={toolData.content}
-      />
+      <Suspense fallback={<Loading />}>
+        <ToolContent
+          img={toolData.img}
+          title={toolData.title}
+          content={toolData.content}
+        />
+      </Suspense>
     );
   } catch (error) {
     return (

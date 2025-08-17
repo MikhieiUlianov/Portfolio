@@ -2,6 +2,7 @@ import classes from "./skills.module.scss";
 import { skillsItems } from "../SideData";
 import Section from "../general-use/section/section";
 import SkillItem from "./skill-item";
+import StyledButton from "../UI/styled-button/styled-button";
 
 export default function Skills() {
   const skills = skillsItems.splice(0, 3);
@@ -19,6 +20,9 @@ export default function Skills() {
             <SkillItem key={skill.title} {...skill} index={i} />
           ))}
         </div>
+        <StyledButton href={"/my-tools"} className="margin">
+          See More
+        </StyledButton>
       </Section>
     </>
   );

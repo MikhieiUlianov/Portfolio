@@ -3,6 +3,8 @@ import { useState } from "react";
 import Link from "next/link";
 import classes from "./menu.module.scss";
 import CloseIcon from "@/components/UI/icons/close-icon";
+import SocialLinks from "../social-links/social-links";
+import StyledButton from "@/components/UI/styled-button/styled-button";
 
 export default function Menu() {
   const [active, setActive] = useState(false);
@@ -16,7 +18,7 @@ export default function Menu() {
         <span className="long"></span>
         <span></span>
       </div>
-      <div className={`${classes.menu} ${active ? classes.active : ""}`}>
+      <div className={`${classes.menu} ${active ? classes.active : ""} active`}>
         <div className={classes.block}>
           <div onClick={() => setActive((prev) => !prev)}>
             <CloseIcon extraClass={`${classes.close} icon-cancel`} />
@@ -34,14 +36,16 @@ export default function Menu() {
               </li>
             </ul>
           </nav>
+          <div className={classes.modalActions}>
+            <StyledButton href="/?modal=login">Log In</StyledButton>
+            <StyledButton href="/?modal=signup">Sign Up</StyledButton>
+            <StyledButton href="/?modal=change-password">
+              Change Password
+            </StyledButton>
+          </div>
 
           <div className={classes.social}>
-            <a
-              href="https://github.com/user09users"
-              className="icon-github-circled"
-            ></a>
-            <a href="#" className="icon-instagram"></a>
-            <a href="#" className="icon-facebook"></a>
+            <SocialLinks />
           </div>
         </div>
         <div className={classes.overlay}></div>

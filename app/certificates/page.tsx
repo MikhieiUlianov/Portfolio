@@ -1,23 +1,20 @@
 import Section from "@/components/general-use/section/section";
 import classes from "./certificates.module.scss";
-/* import { useState } from "react"; */
 import { certificatesItems } from "@/components/SideData";
 import Link from "next/link";
 import Image from "next/image";
-import StyledButton from "@/components/UI/styled-button/styled-button";
 import { verifyAuth } from "@/lib/auth";
 import { redirect } from "next/navigation";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "My Certificates",
+  description: "My certificates page where i tell where and how i got them.",
+};
 
 export default async function CertificatesPage() {
-  const certificates = certificatesItems.slice(0, 3);
-  /* 
-  function handleLoadMore() {
-    const newAmount = amount + 3;
-    setAmount(newAmount);
-    if (newAmount >= certificatesItems.length) {
-      setFinished(true);
-    }
-  } */
+  const certificates = certificatesItems;
+
   const result = await verifyAuth();
   if (!result.user) redirect("/");
   return (
@@ -45,11 +42,6 @@ export default async function CertificatesPage() {
           </li>
         ))}
       </ul>
-      {/*  {!finished && (
-        <StyledButton onClick={handleLoadMore} className="margin">
-          Load More
-        </StyledButton>
-      )} */}
     </Section>
   );
 }

@@ -49,8 +49,7 @@
         text-align: center;
       }
     }
-    .login/* ,
-    .policy */ {
+    .login {
       font-size: 12px;
       line-height: 14px;
       display: flex;
@@ -91,14 +90,9 @@
         width: 100%;
       }
       .login,
-      /* .policy, */
       .forgotPass {
         font-size: 16px;
       }
-
-      /*   .policy {
-        justify-content: flex-start;
-      } */
       .actions {
         flex-direction: row;
         justify-content: space-between;

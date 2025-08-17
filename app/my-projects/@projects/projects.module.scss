@@ -19,46 +19,6 @@
   }
 }
 
-.project {
-  border: 1px solid black;
-  padding: 10px;
-  transition: all 0.3s;
-  border-radius: 10px;
-  cursor: pointer;
-  img {
-    width: 100%;
-  }
-  h3 {
-    text-align: center;
-    font-weight: 600;
-    margin-top: 10px;
-  }
-  p {
-    margin-top: 10px;
-    text-align: center;
-    font-weight: 500;
-    font-size: 14px;
-    span {
-      font-weight: 700;
-    }
-  }
-  .actions {
-    margin-top: 15px;
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    align-items: center;
-    p {
-      margin: 0 !important;
-    }
-    .repoLink {
-      font-size: 14px;
-      font-weight: 700;
-      line-height: 21px;
-      text-align: center;
-    }
-  }
-}
 @media (min-width: 1200px) {
   .error {
     display: flex;
@@ -70,12 +30,6 @@
     }
     h2 {
       font-size: 30px;
-    }
-  }
-  .project {
-    &:hover {
-      transform: translateY(-5px);
-      box-shadow: 0px 0px 50px 0px rgba(43, 42, 40, 0.2);
     }
   }
 }

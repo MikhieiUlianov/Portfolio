@@ -3,7 +3,9 @@
 
 .portfolio {
   padding-top: 40px;
-
+  .seeMore {
+    margin-top: 25px;
+  }
   .wrapper {
     margin-top: 60px;
     display: grid;
@@ -57,7 +59,6 @@
     }
   }
 
-  /* === ≥576px === */
   @media (min-width: 576px) {
     padding-top: 60px;
 
@@ -75,11 +76,13 @@
 
   @media (min-width: 1200px) {
     padding-top: 120px;
-
+    .seeMore {
+      margin-top: 50px;
+    }
     .wrapper {
-      grid-template-columns: repeat(4, 280px);
+      grid-template-columns: repeat(auto-fit, 350px);
       grid-template-rows: repeat(2, 280px);
-      gap: 5px;
+      gap: 20px;
 
       .vertical {
         grid-row: 1 / 3;

@@ -9,9 +9,7 @@ export default async function InterceptedImagePage({
 }: {
   params: { slug: string };
 }) {
-  const certificate = await certificatesItems.find(
-    (i) => i.slug === params.slug
-  );
+  const certificate = certificatesItems.find((i) => i.slug === params.slug);
 
   if (!certificate) {
     notFound();
