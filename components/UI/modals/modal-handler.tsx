@@ -1,13 +1,13 @@
 "use client";
 import { useSearchParams, useRouter } from "next/navigation";
 import { useEffect, useRef } from "react";
-import SignUpModal from "../sign-up/sign-up";
-import LogInModal from "../log-in/log-in";
-import ChangePassModal from "../change-pass/change-pass";
+import SignUpModal from "./sign-up";
+import LogInModal from "./log-in";
+import ChangePassModal from "./change-pass";
 
-import classes from "../modal-handler.module.scss";
-import ModalBackdrop from "../modal-backdrop";
-import CloseIcon from "../../icons/close-icon";
+import classes from "./modal-handler.module.scss";
+import ModalBackdrop from "./modal-backdrop";
+import CloseIcon from "../icons/close-icon";
 
 export default function ModalHandler() {
   const searchParams = useSearchParams();

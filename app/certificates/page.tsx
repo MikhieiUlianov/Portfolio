@@ -1,26 +1,25 @@
-"use client";
-
 import Section from "@/components/general-use/section/section";
 import classes from "./certificates.module.scss";
-import { useState } from "react";
+/* import { useState } from "react"; */
 import { certificatesItems } from "@/components/SideData";
 import Link from "next/link";
 import Image from "next/image";
 import StyledButton from "@/components/UI/styled-button/styled-button";
+import { verifyAuth } from "@/lib/auth";
+import { redirect } from "next/navigation";
 
-export default function CertificatesPage() {
-  const [finished, setFinished] = useState(false);
-  const [amount, setAmount] = useState(3);
-  const certificates = certificatesItems.slice(0, amount);
-
+export default async function CertificatesPage() {
+  const certificates = certificatesItems.slice(0, 3);
+  /* 
   function handleLoadMore() {
     const newAmount = amount + 3;
     setAmount(newAmount);
     if (newAmount >= certificatesItems.length) {
       setFinished(true);
     }
-  }
-
+  } */
+  const result = await verifyAuth();
+  if (!result.user) redirect("/");
   return (
     <Section sectionClass={classes.certificates}>
       <ul>
@@ -46,11 +45,11 @@ export default function CertificatesPage() {
           </li>
         ))}
       </ul>
-      {!finished && (
+      {/*  {!finished && (
         <StyledButton onClick={handleLoadMore} className="margin">
           Load More
         </StyledButton>
-      )}
+      )} */}
     </Section>
   );
 }

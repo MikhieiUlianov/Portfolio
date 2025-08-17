@@ -5,7 +5,7 @@ import Header from "@/components/navigation/header/header";
 import Footer from "@/components/navigation/footer/Footer";
 import Menu from "@/components/navigation/menu/Menu";
 import ReduxProvider from "@/store/redux-provider";
-import ModalHandler from "@/components/UI/modals/modal-handler/modal-handler";
+import ModalHandler from "@/components/UI/modals/modal-handler";
 
 export const metadata: Metadata = {
   title: "Create Next App",

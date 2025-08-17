@@ -2,7 +2,7 @@
 
 import Input from "@/components/UI/input/input";
 import StyledButton from "@/components/UI/styled-button/styled-button";
-import classes from "../modal-handler.module.scss";
+import classes from "./modal-handler.module.scss";
 import Link from "next/link";
 import { useForm } from "react-hook-form";
 import { signup, SignUpFormValues } from "@/actions/sign-up";

@@ -83,7 +83,7 @@ export default function Input({ ...props }: CheckboxProps | DefaultInputProps) {
         {...register(name, validationLogic)}
         type={type}
         name={name}
-        id={name}
+        /*   id={name} */
         placeholder={placeholder}
       />
       <label htmlFor={name}>{label}</label>

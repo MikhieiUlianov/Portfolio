@@ -7,13 +7,26 @@ const adapter = new BetterSqlite3Adapter(db, {
   session: "sessions",
   user: "users",
 });
-
+declare module "lucia" {
+  interface Register {
+    Lucia: typeof lucia;
+    DatabaseUserAttributes: {
+      email: string;
+      name: string;
+    };
+  }
+}
 const lucia = new Lucia(adapter, {
   sessionCookie: {
     expires: false,
     attributes: {
       secure: process.env.NODE_ENV === "production",
     },
+  },
+  getUserAttributes: (attributes) => {
+    return {
+      name: attributes.name,
+    };
   },
 });
 
@@ -68,4 +81,22 @@ export async function verifyAuth() {
     }
   } catch {}
   return result;
+}
+
+export async function destroySession() {
+  const { session } = await verifyAuth();
+
+  if (!session) {
+    throw new Error("Something went wrong.");
+  }
+
+  if (session) {
+    lucia.invalidateSession(session.id);
+    const sessionCookie = lucia.createBlankSessionCookie();
+    (await cookies()).set(
+      sessionCookie.name,
+      sessionCookie.value,
+      sessionCookie.attributes
+    );
+  }
 }

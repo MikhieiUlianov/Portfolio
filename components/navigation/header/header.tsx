@@ -1,11 +1,11 @@
-"use client";
-import { useState } from "react";
 import classes from "./header.module.scss";
 import StyledButton from "@/components/UI/styled-button/styled-button";
 import Link from "next/link";
 import Image from "next/image";
-export default function Header() {
-  const [logged, setLogged] = useState(false);
+import { verifyAuth } from "@/lib/auth";
+import logout from "@/actions/log-out";
+export default async function Header() {
+  const accountExists = await verifyAuth();
 
   return (
     <div className={classes.header}>
@@ -26,11 +26,14 @@ export default function Header() {
         </Link>
 
         <div className={classes.desktop}>
-          {logged ? (
+          {accountExists.user ? (
             <div className={classes.logged}>
-              <div className={classes["logged-block"]}>
+              {/* <div className={classes["logged-block"]}>
                 <div className={`${classes["logged-text"]}`}>Favourites</div>
-              </div>
+              </div> */}
+              <form action={logout}>
+                <StyledButton>Logout</StyledButton>
+              </form>
               <span className={`${classes["logged-divider"]}`}></span>
               <div className={classes["logged-profile"]}>
                 <img
@@ -38,7 +41,9 @@ export default function Header() {
                   alt="selfie"
                   className="header__logged-profile-photo"
                 />
-                <div className="header__logged-profile-name">John D.</div>
+                <div className="header__logged-profile-name">
+                  {accountExists.user.name}
+                </div>
               </div>
             </div>
           ) : (
