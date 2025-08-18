@@ -1,5 +1,8 @@
 import StyledButton from "@/components/UI/styled-button/styled-button";
 
+export const metadata = {
+  title: "Not Found",
+};
 export default function NotFound() {
   return (
     <main className="not-found">

@@ -3,6 +3,7 @@
 import { createAuthSession } from "@/lib/auth";
 import { hashPassword } from "@/lib/hash";
 import { createUser } from "@/lib/user";
+import { RegistrationResult } from "@/components/UI/modals/form-templ";
 
 export type SignUpFormValues = {
   email: string;
@@ -12,7 +13,9 @@ export type SignUpFormValues = {
   checkbox: boolean;
 };
 
-export async function signup(formData: SignUpFormValues) {
+export async function signup(
+  formData: SignUpFormValues
+): Promise<RegistrationResult> {
   const { email, name, password, confirmPassword, checkbox } = formData;
 
   const errors: Record<string, string> = {};

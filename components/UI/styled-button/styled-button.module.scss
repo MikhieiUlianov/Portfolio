@@ -18,7 +18,7 @@
   justify-content: center;
   display: flex;
   transition: all 0.5s;
-
+  max-width: 300px;
   &:disabled {
     background: rgb(225, 133, 5);
   }

@@ -11,7 +11,10 @@ import SidePanel from "@/components/navigation/sidepanel/Sidepanel";
 export const metadata: Metadata = {
   title: "My portfolio",
   description: "The portfolio about me and my career.",
-  viewport: "width=device-width, initial-scale=1.0",
+};
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
 };
 
 export default function RootLayout({

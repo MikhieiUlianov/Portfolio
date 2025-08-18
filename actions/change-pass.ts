@@ -2,13 +2,16 @@
 
 import { hashPassword, verifyPassword } from "@/lib/hash";
 import { getUserByEmail, updatePassword } from "@/lib/user";
+import { RegistrationResult } from "@/components/UI/modals/form-templ";
 
 export type ChangePassFormValues = {
   email: string;
   oldPassword: string;
   newPassword: string;
 };
-export default async function changePassword(formData: ChangePassFormValues) {
+export default async function changePassword(
+  formData: ChangePassFormValues
+): Promise<RegistrationResult> {
   const { email, oldPassword, newPassword } = formData;
 
   const user = getUserByEmail(email) as {

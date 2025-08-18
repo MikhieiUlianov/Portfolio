@@ -3,13 +3,16 @@
 import { verifyPassword } from "@/lib/hash";
 import { getUserByEmail } from "@/lib/user";
 import { createAuthSession } from "@/lib/auth";
+import { RegistrationResult } from "@/components/UI/modals/form-templ";
 
-type LogInProps = {
+export type LogInFormValues = {
   email: string;
   password: string;
 };
 
-export async function login(formData: LogInProps) {
+export async function login(
+  formData: LogInFormValues
+): Promise<RegistrationResult> {
   const email = formData.email;
   const password = formData.password;
 
