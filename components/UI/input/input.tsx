@@ -13,6 +13,8 @@ type CheckboxProps = InputProps & { children: ReactNode };
 type DefaultInputProps = InputProps & {
   label: string;
   placeholder: string;
+
+  extraInputClass?: string;
 };
 
 function isCheckbox(
@@ -75,11 +77,14 @@ export default function Input({ ...props }: CheckboxProps | DefaultInputProps) {
       </div>
     );
   }
-  const { placeholder, label } = props;
+  const { placeholder, label, extraInputClass } = props;
+
+  const Input = type === "textarea" ? "textarea" : "input";
 
   return (
     <div className={classes.input}>
-      <input
+      <Input
+        className={extraInputClass}
         {...register(name, validationLogic)}
         type={type}
         name={name}

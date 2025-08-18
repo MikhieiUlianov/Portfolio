@@ -2,6 +2,7 @@ import Image from "next/image";
 import Section from "../../general-use/section/section";
 import classes from "./contacts.module.scss";
 import SocialLinks from "@/components/navigation/social-links/social-links";
+import ContactsForm from "./contacts-form";
 
 export default function Contacts() {
   return (
@@ -27,44 +28,7 @@ export default function Contacts() {
           <div className={`title title_fz14 ${classes.text}`}>
             Or leave your details and I will write you myself:
           </div>
-
-          <form action="#" className={classes.form}>
-            <div className={classes.input}>
-              <input
-                type="text"
-                name="name"
-                id="name"
-                required
-                placeholder="Name"
-              />
-              <label htmlFor="name">Your name</label>
-            </div>
-            <div className={classes.input}>
-              <input
-                type="email"
-                name="email"
-                id="email"
-                required
-                placeholder="E-mail"
-              />
-              <label htmlFor="email">Your E-mail</label>
-            </div>
-
-            <div className={classes.textarea}>
-              <textarea name="text" id="text" required></textarea>
-              <label htmlFor="text">Your message</label>
-            </div>
-
-            <div className={classes.triggers}>
-              <button className={`btn ${classes.btn}`}>Send message</button>
-              <div className={classes.policy}>
-                <input required type="checkbox" />
-                <span>
-                  I agree with <a href="/policy.html">the privacy policy</a>
-                </span>
-              </div>
-            </div>
-          </form>
+          <ContactsForm />
         </div>
       </div>
     </Section>

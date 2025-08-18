@@ -1,17 +1,15 @@
-"use client";
-
 import Input from "@/components/UI/input/input";
 import classes from "./modal-handler.module.scss";
 import Link from "next/link";
 import { signup, SignUpFormValues } from "@/actions/sign-up";
-import ModalTempl from "./form-templ";
+import FormTempl from "../../../utils/form-templ";
 
 export default function SignUpModal() {
   return (
     <div>
       <h2>Sign up</h2>
       <h3>Sign up to see more content!</h3>
-      <ModalTempl<SignUpFormValues>
+      <FormTempl<SignUpFormValues>
         registrationFunc={signup}
         redirectPath="/"
         footer={
@@ -68,7 +66,7 @@ export default function SignUpModal() {
             </>
           );
         }}
-      </ModalTempl>
+      </FormTempl>
     </div>
   );
 }

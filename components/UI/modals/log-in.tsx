@@ -1,10 +1,8 @@
-"use client";
-
 import Input from "@/components/UI/input/input";
 import classes from "./modal-handler.module.scss";
 import Link from "next/link";
 import { login, LogInFormValues } from "@/actions/log-in";
-import ModalTempl from "./form-templ";
+import FormTempl from "../../../utils/form-templ";
 
 export default function LogInModal() {
   return (
@@ -12,7 +10,7 @@ export default function LogInModal() {
       <h2>Log in</h2>
       <h3>Log in to access your account!</h3>
 
-      <ModalTempl<LogInFormValues>
+      <FormTempl<LogInFormValues>
         registrationFunc={login}
         redirectPath="/"
         footer={
@@ -58,7 +56,7 @@ export default function LogInModal() {
             </div>
           </>
         )}
-      </ModalTempl>
+      </FormTempl>
     </div>
   );
 }

@@ -1,41 +1,37 @@
 import SocialLinks from "../social-links/social-links";
 import StyledButton from "@/components/UI/styled-button/styled-button";
 import classes from "./footer.module.scss";
+import FooterForm from "./footer-form";
+import Image from "next/image";
 
-const Footer = () => {
+export default function Footer() {
   return (
     <section className={classes.footer}>
-      <div className={classes.form}>
-        <div className={classes.formBlock}>
-          <h2 className={classes.formTitle}>Subscribe Newsletter</h2>
-          <div className={classes.formText}>
+      <div className={classes.subscribe}>
+        <div className={classes.subscribeBlock}>
+          <h2 className={classes.subscribeTitle}>Subscribe Newsletter</h2>
+          <div className={classes.subscribeText}>
             Get inspired! Get notifications about updates.
           </div>
-          <form>
-            <input
-              className={classes.input}
-              name="name"
-              placeholder="Find Travel"
-              style={{ width: "450px" }}
-            />
-            <StyledButton className={classes.formAction}>Button</StyledButton>
-          </form>
+          <FooterForm />
         </div>
-        <img src="/icons/mailbox.svg" alt="mailbox" />
+        <Image
+          width={400}
+          height={296}
+          src="/icons/mailbox.svg"
+          alt="mailbox"
+        />
       </div>
       <span className={classes.devider}></span>
       <ul className={classes.nav}>
         <li>
-          <StyledButton>About</StyledButton>
+          <StyledButton href="/my-projects">My Projects</StyledButton>
         </li>
         <li>
-          <StyledButton>About</StyledButton>
+          <StyledButton href="/certificates">My Certificates</StyledButton>
         </li>
         <li>
-          <StyledButton>About</StyledButton>
-        </li>
-        <li>
-          <StyledButton>About</StyledButton>
+          <StyledButton href="/my-tools">My Tools</StyledButton>
         </li>
       </ul>
       <span className={classes.devider}></span>
@@ -45,6 +41,4 @@ const Footer = () => {
       </div>
     </section>
   );
-};
-
-export default Footer;
+}

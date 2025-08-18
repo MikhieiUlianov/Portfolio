@@ -10,16 +10,21 @@ export type RegistrationResult = {
   errors?: Record<string, string>;
 };
 
-export default function ModalTempl<TFormData extends FieldValues>({
+export default function formTempl<TFormData extends FieldValues>({
   children,
   registrationFunc,
   redirectPath,
   footer,
+  extraFormClass,
+  removeErrorMsg,
 }: {
+  //it means that methods, must be a helpers, that useform provides us, and the formData must of generic type that is passed us.
   children: (methods: ReturnType<typeof useForm<TFormData>>) => ReactNode;
   registrationFunc: (data: TFormData) => Promise<RegistrationResult>;
-  redirectPath: string;
+  redirectPath?: string;
   footer?: ReactNode;
+  extraFormClass?: string;
+  removeErrorMsg?: boolean;
 }) {
   const [isError, setIsError] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
@@ -46,24 +51,29 @@ export default function ModalTempl<TFormData extends FieldValues>({
       });
     } else if (result.success) {
       reset();
-      setTimeout(() => router.push(redirectPath), 5000);
+      if (redirectPath) {
+        setTimeout(() => router.push(redirectPath), 5000);
+      }
     }
 
     setIsLoading(false);
   }
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
-      {children(methods)}
+    <>
+      <form onSubmit={handleSubmit(onSubmit)} className={extraFormClass}>
+        {children(methods)}
 
-      {isError && <p style={{ color: "red" }}>Ops! Something went wrong.</p>}
+        {!removeErrorMsg && isError && (
+          <p style={{ color: "red" }}>Ops! Something went wrong.</p>
+        )}
+
+        {footer}
+        <StyledButton disabled={isLoading}>Submit</StyledButton>
+      </form>
       {isSuccess && (
-        <p style={{ color: "green", textAlign: "center" }}>
-          Success! now you have access to all features!
-        </p>
+        <p className="success">Success! Thanks for your attenton.</p>
       )}
-      {footer}
-      <StyledButton disabled={isLoading}>Submit</StyledButton>
-    </form>
+    </>
   );
 }

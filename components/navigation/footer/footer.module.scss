@@ -14,7 +14,7 @@
     border-radius: 6px;
   }
 
-  .form {
+  .subscribe {
     min-height: 305px;
     padding: 24px 24px 0 24px;
     border-radius: 20px;
@@ -35,11 +35,15 @@
       font-weight: 600;
     }
 
-    form {
+    .form {
       margin-top: 24px;
       gap: 16px;
       display: flex;
       flex-direction: column;
+      align-items: stretch;
+      label {
+        display: none;
+      }
     }
 
     &Action {
@@ -47,7 +51,7 @@
     }
 
     .input {
-      width: 100% !important;
+      width: 100%;
       height: 56px;
       padding: 8px 0 8px 16px;
       margin: 0 auto;
@@ -60,14 +64,20 @@
       height: 296px;
       display: none;
     }
+    p {
+      text-align: left;
+      margin-bottom: 20px;
+    }
   }
 
   .nav {
     margin-top: 25px;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    display: flex;
+    justify-content: center;
     gap: 10px;
     align-items: center;
+
+    flex-direction: column;
   }
   .social {
     margin: 25px auto 0 auto;
@@ -86,11 +96,10 @@
       width: 100px;
     }
     .nav {
-      display: flex;
-      justify-content: center;
+      flex-direction: row;
     }
 
-    .form {
+    .subscribe {
       &Title {
         font-size: 26px;
       }
@@ -110,7 +119,7 @@
 @media (min-width: 1200px) {
   .footer {
     margin-top: 200px;
-    .form {
+    .subscribe {
       top: -100px;
       display: grid;
       grid-template-columns: 595px 400px;
@@ -134,24 +143,23 @@
         font-weight: 600;
       }
 
-      form {
+      .form {
         margin-top: 24px;
         gap: 16px;
         display: flex;
-        flex-direction: row;
         width: 500px;
         padding-bottom: 24px;
-        button {
-          height: 100%;
+        input {
+          width: 473px;
+          height: 56px;
+          padding: 8px 0 8px 16px;
+          &::placeholder {
+            font-size: 14px;
+          }
         }
-      }
-
-      input {
-        width: 473px;
-        height: 56px;
-        padding: 8px 0 8px 16px;
-        &::placeholder {
-          font-size: 14px;
+        p {
+          width: 135px;
+          margin-right: 100%;
         }
       }
 
@@ -160,14 +168,14 @@
       }
     }
     .nav {
-      margin-top: 200px;
+      margin-top: 250px;
     }
   }
 }
 
 @media screen and (min-width: 1920px) {
   .footer {
-    .form {
+    .subscribe {
       padding: 24px 50px;
       gap: 350px;
     }

@@ -3,7 +3,7 @@
 import { verifyPassword } from "@/lib/hash";
 import { getUserByEmail } from "@/lib/user";
 import { createAuthSession } from "@/lib/auth";
-import { RegistrationResult } from "@/components/UI/modals/form-templ";
+import { RegistrationResult } from "@/utils/form-templ";
 
 export type LogInFormValues = {
   email: string;

@@ -2,7 +2,7 @@
 
 import { hashPassword, verifyPassword } from "@/lib/hash";
 import { getUserByEmail, updatePassword } from "@/lib/user";
-import { RegistrationResult } from "@/components/UI/modals/form-templ";
+import { RegistrationResult } from "@/utils/form-templ";
 
 export type ChangePassFormValues = {
   email: string;

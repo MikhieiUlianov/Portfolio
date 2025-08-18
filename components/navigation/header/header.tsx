@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { verifyAuth } from "@/lib/auth";
 import logout from "@/actions/log-out";
+
 export default async function Header() {
   const accountExists = await verifyAuth();
 
@@ -33,7 +34,9 @@ export default async function Header() {
               </form>
               <span className={`${classes["logged-divider"]}`}></span>
               <div className={classes["logged-profile"]}>
-                <img
+                <Image
+                  width={20}
+                  height={20}
                   src="/icons/user.svg"
                   alt="selfie"
                   className="header__logged-profile-photo"
