@@ -11,7 +11,7 @@ export default function Footer() {
         <div className={classes.subscribeBlock}>
           <h2 className={classes.subscribeTitle}>Subscribe Newsletter</h2>
           <div className={classes.subscribeText}>
-            Get inspired! Get notifications about updates.
+            This form does not actually subcrive newsletters for now.
           </div>
           <FooterForm />
         </div>

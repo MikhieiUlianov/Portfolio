@@ -2,8 +2,13 @@ import { notFound } from "next/navigation";
 import { certificatesItems } from "@/components/SideData";
 import Image from "next/image";
 
-export default function ImagePage({ params }: { params: { slug: string } }) {
-  const certificate = certificatesItems.find((i) => i.slug === params.slug);
+export default async function ImagePage({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const { slug } = await params;
+  const certificate = certificatesItems.find((i) => i.slug === slug);
   if (!certificate) {
     notFound();
   }

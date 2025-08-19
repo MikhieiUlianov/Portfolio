@@ -10,11 +10,10 @@ import Loading from "@/components/UI/Loading";
 export async function generateMetadata({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
-  const certificate = await certificatesItems.find(
-    (i) => i.slug === params.slug
-  );
+  const { slug } = await params;
+  const certificate = certificatesItems.find((i) => i.slug === slug);
   return {
     title: certificate?.title || "Project Page",
     description:
@@ -25,22 +24,28 @@ export async function generateMetadata({
 export default async function CertificatePage({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
-  const certificate = await certificatesItems.find(
-    (i) => i.slug === params.slug
-  );
+  const { slug } = await params;
+  const certificate = await certificatesItems.find((i) => i.slug === slug);
 
   if (!certificate) return notFound();
 
-  const { image, title, description, link, rating, slug } = certificate;
+  const {
+    image,
+    title,
+    description,
+    link,
+    rating,
+    slug: certSlug,
+  } = certificate;
 
   return (
     <Section sectionClass={classes.certificate}>
       <Suspense fallback={<Loading />}>
         <header>
           <h1>{title}</h1>
-          <Link href={`/certificates/${slug}/image`}>
+          <Link href={`/certificates/${certSlug}/image`}>
             <Image alt={title} src={image} />
           </Link>
         </header>

@@ -11,7 +11,7 @@ export default function SocialLinks({ className }: { className?: string }) {
       </li>
       <li>
         <a
-          href="https://x.com/rachoookk"
+          href="https://x.com/mikhieiulianov"
           className={`icon-twitter ${className} ${classes.link}`}
         ></a>
       </li>

@@ -7,9 +7,10 @@ import classes from "./modal.module.scss";
 export default async function InterceptedImagePage({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
-  const certificate = certificatesItems.find((i) => i.slug === params.slug);
+  const { slug } = await params;
+  const certificate = await certificatesItems.find((i) => i.slug === slug);
 
   if (!certificate) {
     notFound();

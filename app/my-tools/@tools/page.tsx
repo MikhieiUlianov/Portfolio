@@ -14,7 +14,7 @@ export default function Tools() {
     finished: false,
   });
   const skills = skillsItems.slice(0, skillsAmount.amount);
-  let filteredItems = useFilteredTools(skills);
+  const filteredItems = useFilteredTools(skills);
 
   function handleLoadMore() {
     setSkillsAmount((prev) => ({ ...prev, amount: prev.amount + 3 }));

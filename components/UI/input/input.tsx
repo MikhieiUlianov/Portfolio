@@ -1,32 +1,47 @@
 import { ReactNode } from "react";
 import classes from "./input.module.scss";
-import { FieldErrors, UseFormRegister } from "react-hook-form";
+import {
+  FieldErrors,
+  FieldValues,
+  Path,
+  UseFormRegister,
+} from "react-hook-form";
 
-type InputProps = {
-  name: string;
+type InputProps<T extends FieldValues> = {
+  name: Path<T>;
   type: string;
-  errors: FieldErrors;
-  register: UseFormRegister<any>;
+  errors: FieldErrors<T>;
+  register: UseFormRegister<T>;
 };
 
-type CheckboxProps = InputProps & { children: ReactNode };
-type DefaultInputProps = InputProps & {
+type CheckboxProps<T extends FieldValues> = InputProps<T> & {
+  children: ReactNode;
+};
+type DefaultInputProps<T extends FieldValues> = InputProps<T> & {
   label: string;
   placeholder: string;
-
   extraInputClass?: string;
 };
 
-function isCheckbox(
-  props: DefaultInputProps | CheckboxProps
-): props is CheckboxProps {
+function isCheckbox<T extends FieldValues>(
+  props: DefaultInputProps<T> | CheckboxProps<T>
+): props is CheckboxProps<T> {
   return "children" in props;
 }
 
-export default function Input({ ...props }: CheckboxProps | DefaultInputProps) {
+export default function Input<T extends FieldValues>(
+  props: CheckboxProps<T> | DefaultInputProps<T>
+) {
   const { name, type, errors, register } = props;
 
-  let validationLogic: Record<string, any> = {
+  const validationLogic: Record<
+    string,
+    | string
+    | {
+        value: string | number | RegExp;
+        message: string;
+      }
+  > = {
     required: "The field is required.",
   };
 
@@ -77,18 +92,17 @@ export default function Input({ ...props }: CheckboxProps | DefaultInputProps) {
       </div>
     );
   }
-  const { placeholder, label, extraInputClass } = props;
 
-  const Input = type === "textarea" ? "textarea" : "input";
+  const { placeholder, label, extraInputClass } = props;
+  const InputTag = type === "textarea" ? "textarea" : "input";
 
   return (
     <div className={classes.input}>
-      <Input
+      <InputTag
         className={extraInputClass}
         {...register(name, validationLogic)}
         type={type}
         name={name}
-        /*   id={name} */
         placeholder={placeholder}
       />
       <label htmlFor={name}>{label}</label>

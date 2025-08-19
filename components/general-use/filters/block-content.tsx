@@ -17,14 +17,14 @@ export default function BlockContent({
   filtersArrName,
 }: BlockContentProps) {
   const dispatch = useDispatch();
-
+  const activeFilters = useSelector(
+    (state: RootState) => state.accordion.activeFilters[filtersArrName]
+  );
   return (
     <div className={classes["filter-content"]} key={label}>
       <ul className={classes["filter-items"]}>
         {filters.map((filter) => {
-          const isActive = useSelector(
-            (state: RootState) => state.accordion.activeFilters[filtersArrName]
-          ).includes(normalizeString(filter));
+          const isActive = activeFilters.includes(normalizeString(filter));
           console.log(isActive);
           return (
             <li

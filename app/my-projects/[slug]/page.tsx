@@ -7,11 +7,15 @@ import classes from "./project.module.scss";
 import { useSelector } from "react-redux";
 import { RootState } from "@/store/store";
 import { notFound } from "next/navigation";
-import { Suspense } from "react";
+import { Suspense, use } from "react";
 import Loading from "@/components/UI/Loading";
 
-export default function ProjectPage({ params }: { params: { slug: string } }) {
-  const slug = params.slug;
+export default function ProjectPage({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const { slug } = use(params);
   const allProjects = useSelector((state: RootState) => state.projects.repos);
 
   const matchedProject = allProjects.find(

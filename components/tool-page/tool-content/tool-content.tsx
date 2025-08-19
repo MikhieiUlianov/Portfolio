@@ -16,7 +16,7 @@ SyntaxHighlighter.registerLanguage("css", css);
 SyntaxHighlighter.registerLanguage("jsx", jsx);
 
 type ToolContentProps = {
-  img: any;
+  img: string;
   title: string;
   content: string;
 };

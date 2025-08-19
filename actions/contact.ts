@@ -7,6 +7,7 @@ export type ContactsFormValues = {
   email: string;
   name: string;
   message: string;
+  checkbox: boolean;
 };
 
 export async function saveContacts({

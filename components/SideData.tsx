@@ -8,26 +8,21 @@ import mongoIcon from "../public/icons/coding/mongo-db.svg";
 import typeScript from "../public/icons/coding/typescript.svg";
 import nextJs from "../public/icons/coding/next-js.svg";
 
-//About
 import webDevIcon from "../public/icons/skills/design.svg";
 import mobileDevIcon from "../public/icons/skills/mobile-dev.svg";
 import uiUxIcon from "../public/icons/skills/design.svg";
 
-//Resume
 import universityIcon from "../public/icons/advantages/University.svg";
 import coursesIcon from "../public/icons/advantages/Courses.svg";
 import developerIcon from "../public/icons/advantages/Developer.svg";
 import designerIcon from "../public/icons/advantages/designer.svg";
 
-// portfolioData.ts
 import macaronShopImg from "../public/img/projects/macaronShop.svg";
 import pulseImg from "../public/img/projects/pulse.jpeg";
 import certificateIng from "../public/img/projects/certificate.jpg";
 import marvelImg from "../public/img/projects/marvel.jpeg";
 import ipadImg from "../public/img/projects/ipad.jpeg";
 import tocarImg from "../public/img/projects/tocar.svg";
-
-//certificates
 
 import reactCert from "../public/img/certificates/react-the-complete-guide-incl-redux.jpg";
 import nextJsCert from "../public/img/certificates/nextjs-react-the-complete-guide.jpg";
@@ -51,61 +46,60 @@ export const aboutSkills = [
   {
     img: webDevIcon,
     alt: "web-dev",
-    title: "Web-development",
+    title: "Web Development",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "I build interactive and maintainable web interfaces using React and Next.js, focusing on functionality and code quality.",
   },
   {
     img: mobileDevIcon,
-    alt: "mobile-dev",
-    title: "Application development",
+    alt: "responsive-web",
+    title: "Responsive Design",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "I ensure websites look great and work smoothly on all devices by creating responsive layouts and adaptive styles for different screen sizes.",
   },
   {
     img: uiUxIcon,
     alt: "design",
     title: "UI/UX Design",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "I design intuitive and visually appealing interfaces, prioritizing user experience and accessibility in every project.",
   },
 ];
-
 export const resumeData = {
   education: [
     {
       icon: universityIcon,
-      alt: "university",
-      title: "МГТУ им. Н. Э. Баумана",
-      location: "Диплом магистра | Москва (2014-2020)",
+      alt: "school",
+      title: "Secondary Education",
+      location: "Ukraine | Completed 2023",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "Completed secondary education with a focus on mathematics and computer science. Currently learning Swedish and preparing to enroll in a KTH university.",
     },
     {
       icon: coursesIcon,
       alt: "courses",
-      title: "Udemy",
-      location: "Web-development courses",
+      title: "Web Development Courses",
+      location: "Udemy / Self-learning",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "Completed online courses on HTML, CSS, JavaScript, React, Next.js, and some more. Built practical projects to strengthen skills and develop a portfolio.",
     },
   ],
   work: [
     {
       icon: developerIcon,
       alt: "developer",
-      title: "Front-End Developer",
-      location: "EPAM | Москва (2018-2019)",
+      title: "Front-End Developer / Personal Projects",
+      location: "Self-learning | 2025–Present",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "Developing web applications using React, Next.js, and TypeScript. Creating responsive interfaces and interactive components for my portfolio.",
     },
     {
       icon: designerIcon,
       alt: "designer",
-      title: "UI/UX Designer",
-      location: "Squad Team | Москва (2018)",
+      title: "UI/UX Designer / Personal Projects",
+      location: "Self-learning | 2025–Present",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "Designing intuitive and visually appealing user interfaces for personal projects. Focused on user experience, accessibility, and responsive design.",
     },
   ],
 };

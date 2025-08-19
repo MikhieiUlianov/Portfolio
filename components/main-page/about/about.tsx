@@ -48,13 +48,15 @@ export default function About() {
             transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
             viewport={{ once: true, amount: 0.2 }}
           >
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum
+            My name is Mikhiei. I am from Ukraine, and now I live in Sweden. I
+            started my web developer journey when I was sixteen years old in
+            December 2024. Since then, I’ve been focusing on building projects
+            with React, TypeScript and Next.js, and learning how to create fast,
+            scalable, and secure applications. I’m passionate about solving
+            problems, improving user experience, and constantly growing as a
+            developer. In the future, I see myself working as a full-stack or
+            security developer, contributing to impactful projects and learning
+            from other professionals.
           </motion.p>
         </div>
 

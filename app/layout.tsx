@@ -7,6 +7,8 @@ import Menu from "@/components/navigation/menu/Menu";
 import ReduxProvider from "@/store/redux-provider";
 import ModalHandler from "@/components/UI/modals/modal-handler";
 import SidePanel from "@/components/navigation/sidepanel/Sidepanel";
+import { verifyAuth } from "@/lib/auth";
+import { User, Session } from "lucia";
 
 export const metadata: Metadata = {
   title: "My portfolio",
@@ -17,20 +19,20 @@ export const viewport = {
   initialScale: 1,
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
-  menu,
 }: Readonly<{
   children: ReactNode;
-  menu: ReactNode;
 }>) {
+  const isLogged:
+    | { user: User; session: Session }
+    | { user: null; session: null } = await verifyAuth();
   return (
     <html lang="en">
       <body>
-        {menu}
         <ReduxProvider>
           <Header />
-          <Menu />
+          <Menu isLogged={isLogged} />
           <SidePanel />
           <ModalHandler />
           {children}

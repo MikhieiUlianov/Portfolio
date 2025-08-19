@@ -4,6 +4,8 @@ export default function MyToolsLayout({
   children,
 }: {
   children: React.ReactNode;
+  filters: never;
+  tools: never;
 }) {
   return (
     <Section>

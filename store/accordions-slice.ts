@@ -2,7 +2,6 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 type FiltersState = {
   activeAccordions: string[];
-  //for mobile and desktop
   isFiltersBlockActive: {
     toolsAccordion: boolean;
     projectsAccordion: boolean;

@@ -6,9 +6,10 @@ import Loading from "@/components/UI/Loading";
 export async function generateMetadata({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
-  const toolData = getToolData(params.slug);
+  const { slug } = await params;
+  const toolData = getToolData(slug);
 
   return {
     title: toolData.title,
@@ -19,10 +20,11 @@ export async function generateMetadata({
 export default async function ToolPage({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
   try {
-    const toolData = getToolData(params.slug);
+    const { slug } = await params;
+    const toolData = getToolData(slug);
     return (
       <Suspense fallback={<Loading />}>
         <ToolContent

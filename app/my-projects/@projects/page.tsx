@@ -26,14 +26,16 @@ export default function MyProjectsList() {
         const newRepos: GitHubRepo[] = await getGitReposData(page);
         dispatch(setProjects(newRepos));
       } catch (error) {
-        error instanceof Error ? error.message : "Something went wrong.";
+        throw new Error(
+          error instanceof Error ? error.message : "Something went wrong."
+        );
       } finally {
         dispatch(setLoading(false));
       }
     }
 
     getRepos();
-  }, [page]);
+  }, [page, dispatch]);
 
   return (
     <ListTemplate

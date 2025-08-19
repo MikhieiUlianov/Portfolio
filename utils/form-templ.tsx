@@ -18,7 +18,6 @@ export default function formTempl<TFormData extends FieldValues>({
   extraFormClass,
   removeErrorMsg,
 }: {
-  //it means that methods, must be a helpers, that useform provides us, and the formData must of generic type that is passed us.
   children: (methods: ReturnType<typeof useForm<TFormData>>) => ReactNode;
   registrationFunc: (data: TFormData) => Promise<RegistrationResult>;
   redirectPath?: string;

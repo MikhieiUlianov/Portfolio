@@ -26,7 +26,7 @@ export default function Promo() {
           transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
           viewport={{ once: true, amount: 0.2 }}
         >
-          I'm web-developer from town Kiev
+          I&apos;m web-developer from town Kiev
         </motion.div>
 
         <motion.div

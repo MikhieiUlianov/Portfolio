@@ -7,7 +7,7 @@ export default function ResumeBlock({
   list,
 }: {
   list: {
-    icon: any;
+    icon: string;
     alt: string;
     title: string;
     location: string;

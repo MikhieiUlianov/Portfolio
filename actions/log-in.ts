@@ -8,6 +8,7 @@ import { RegistrationResult } from "@/utils/form-templ";
 export type LogInFormValues = {
   email: string;
   password: string;
+  checkbox: boolean;
 };
 
 export async function login(

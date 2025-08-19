@@ -1,11 +1,13 @@
 import Section from "@/components/general-use/section/section";
 import { ReactNode } from "react";
 
-export default function MyProjectsLayout({
-  children,
-}: {
+type LayoutProps = {
   children: ReactNode;
-}) {
+  filters: never;
+  projects: never;
+};
+
+export default function MyProjectsLayout({ children }: LayoutProps) {
   return (
     <Section>
       <h2

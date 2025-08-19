@@ -10,6 +10,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { setProjects, setLoading } from "@/store/projects-slice";
 import { GitHubRepo } from "@/lib/projects-action";
 import { RootState } from "@/store/store";
+
 export default function Portfolio() {
   const dispatch = useDispatch();
   const { repos } = useSelector((state: RootState) => state.projects);
@@ -21,14 +22,16 @@ export default function Portfolio() {
         const newRepos: GitHubRepo[] = await getGitReposData(1);
         dispatch(setProjects(newRepos));
       } catch (error) {
-        error instanceof Error ? error.message : "Something went wrong.";
+        throw new Error(
+          error instanceof Error ? error.message : "Something went wrong."
+        );
       } finally {
         dispatch(setLoading(false));
       }
     }
 
     getRepos();
-  }, []);
+  }, [dispatch]);
 
   return (
     <Section sectionClass={classes.portfolio}>
