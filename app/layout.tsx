@@ -2,11 +2,11 @@ import type { Metadata } from "next";
 import "./globals.scss";
 import { ReactNode } from "react";
 import Header from "@/components/navigation/header/header";
-import Footer from "@/components/navigation/footer/Footer";
-import Menu from "@/components/navigation/menu/Menu";
+import Menu from "@/components/navigation/menu/menu";
+import SidePanel from "@/components/navigation/sidepanel/sidepanel";
+import Footer from "@/components/navigation/footer/footer";
 import ReduxProvider from "@/store/redux-provider";
 import ModalHandler from "@/components/UI/modals/modal-handler";
-import SidePanel from "@/components/navigation/sidepanel/Sidepanel";
 import { verifyAuth } from "@/lib/auth";
 import { User, Session } from "lucia";
 

@@ -1,9 +1,9 @@
-import Promo from "@/components/main-page/promo/Promo";
-import Contacts from "@/components/main-page/contacts/Contacts";
+import Promo from "@/components/main-page/promo/promo";
+import Resume from "@/components/main-page/resume/resume";
+import Skills from "@/components/skills/skills";
+import Contacts from "@/components/main-page/contacts/contacts";
 import Portfolio from "@/components/main-page/portfolio/Portfolio";
 import About from "@/components/main-page/about/about";
-import Resume from "@/components/main-page/resume/Resume";
-import Skills from "@/components/skills/Skills";
 
 export const metadata = {
   title: "My portfolio",

@@ -4,7 +4,7 @@ import classes from "./tools.module.scss";
 import { skillsItems } from "@/components/SideData";
 import { useFilteredTools } from "@/lib/filtering-logic";
 import Image from "next/image";
-import SkillItem from "@/components/skills/skill-item";
+import SkillItem from "../../../components/skills/skill-item";
 import { useState } from "react";
 import ListTemplate from "@/components/UI/items-list/items-list";
 
