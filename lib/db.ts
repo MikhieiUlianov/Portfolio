@@ -1,6 +1,8 @@
 import sql from "better-sqlite3";
+import path from "path";
 
-const db = sql("users.db");
+const dbPath = path.resolve("./users.db");
+const db = sql(dbPath);
 
 db.exec(`CREATE TABLE IF NOT EXISTS users (
   id INTEGER PRIMARY KEY,
