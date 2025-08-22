@@ -1,4 +1,4 @@
-import Section from "@/components/general-use/section/section";
+import Section from "@/components/general-use/section";
 import { ReactNode } from "react";
 
 type LayoutProps = {

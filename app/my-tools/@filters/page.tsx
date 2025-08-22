@@ -1,4 +1,4 @@
-import Filters from "@/components/general-use/filters/filters";
+import Filters from "@/components/general-use/filters";
 import { toolsFiltersBlocks } from "@/components/SideData";
 
 export default function FiltersPage() {

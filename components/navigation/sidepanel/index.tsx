@@ -1,5 +1,5 @@
 import classes from "./sidepanel.module.scss";
-import SocialLinks from "../social-links/social-links";
+import SocialLinks from "../../general-use/social-links";
 
 export default function SidePanel() {
   return (

@@ -1,6 +1,6 @@
 import classes from "./skills.module.scss";
 import { skillsItems } from "../SideData";
-import Section from "../general-use/section/section";
+import Section from "../general-use/section";
 import SkillItem from "./skill-item";
 import StyledButton from "../UI/styled-button/styled-button";
 

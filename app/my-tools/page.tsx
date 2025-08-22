@@ -1,5 +1,5 @@
 import Tools from "./@tools/page";
-import CatalogHeader from "@/components/tools-page/catalog-header/catalog-header";
+import CatalogHeader from "@/components/tools-page/catalog-header";
 import FiltersPage from "./@filters/page";
 
 export const metadata = {

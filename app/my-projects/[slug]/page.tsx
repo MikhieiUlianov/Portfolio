@@ -1,7 +1,7 @@
 "use client";
 
 import slugify from "slugify";
-import Section from "@/components/general-use/section/section";
+import Section from "@/components/general-use/section";
 import Slider from "@/utils/slider/slider";
 import classes from "./project.module.scss";
 import { useSelector } from "react-redux";

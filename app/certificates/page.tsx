@@ -1,4 +1,4 @@
-import Section from "@/components/general-use/section/section";
+import Section from "@/components/general-use/section";
 import classes from "./certificates.module.scss";
 import { certificatesItems } from "@/components/SideData";
 import Link from "next/link";

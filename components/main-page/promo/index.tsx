@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Section from "@/components/general-use/section/section";
+import Section from "@/components/general-use/section";
 import classes from "./promo.module.scss";
 import StyledButton from "@/components/UI/styled-button/styled-button";
 

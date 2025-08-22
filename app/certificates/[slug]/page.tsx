@@ -1,4 +1,4 @@
-import Section from "@/components/general-use/section/section";
+import Section from "@/components/general-use/section";
 import { certificatesItems } from "@/components/SideData";
 import classes from "./certificate.module.scss";
 import { notFound } from "next/navigation";

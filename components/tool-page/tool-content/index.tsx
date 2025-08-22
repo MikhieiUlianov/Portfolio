@@ -8,7 +8,7 @@ import js from "react-syntax-highlighter/dist/cjs/languages/prism/javascript";
 import css from "react-syntax-highlighter/dist/cjs/languages/prism/css";
 import jsx from "react-syntax-highlighter/dist/cjs/languages/prism/jsx";
 
-import ToolHeader from "../tool-header/tool-header";
+import ToolHeader from "../tool-header";
 import classes from "./tool-content.module.scss";
 
 SyntaxHighlighter.registerLanguage("js", js);

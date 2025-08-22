@@ -1,4 +1,4 @@
-import SocialLinks from "../social-links/social-links";
+import SocialLinks from "@/components/general-use/social-links";
 import StyledButton from "@/components/UI/styled-button/styled-button";
 import classes from "./footer.module.scss";
 import FooterForm from "./footer-form";

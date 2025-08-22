@@ -1,4 +1,4 @@
-import ToolContent from "@/components/tool-page/tool-content/tool-content";
+import ToolContent from "@/components/tool-page/tool-content";
 import { getToolData } from "@/lib/tools";
 import { Suspense } from "react";
 import Loading from "@/components/UI/Loading";

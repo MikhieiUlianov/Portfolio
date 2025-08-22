@@ -2,7 +2,7 @@
 date: "2025-05-03"
 title: "React"
 description: "A powerful JavaScript library for building dynamic, component-based user interfaces."
-img: "react.svg"
+img: "react-icon.svg"
 ---
 
 React is a powerful JavaScript library for building **interactive user interfaces**.  

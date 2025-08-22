@@ -1,4 +1,4 @@
-import Section from "@/components/general-use/section/section";
+import Section from "@/components/general-use/section";
 import classes from "./items-list.module.scss";
 import StyledButton from "@/components/UI/styled-button/styled-button";
 import { ReactNode } from "react";

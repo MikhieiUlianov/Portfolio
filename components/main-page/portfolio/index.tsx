@@ -1,7 +1,7 @@
 "use client";
 
 import classes from "./portfolio.module.scss";
-import Section from "@/components/general-use/section/section";
+import Section from "@/components/general-use/section";
 import PortfolioProject from "./portfolio-project";
 import { getGitReposData } from "@/lib/projects-action";
 import StyledButton from "@/components/UI/styled-button/styled-button";

@@ -1,4 +1,4 @@
-import Section from "@/components/general-use/section/section";
+import Section from "@/components/general-use/section";
 
 export default function MyToolsLayout({
   children,

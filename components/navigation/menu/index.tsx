@@ -3,7 +3,7 @@ import { useState } from "react";
 import Link from "next/link";
 import classes from "./menu.module.scss";
 import CloseIcon from "@/components/UI/icons/close-icon";
-import SocialLinks from "../social-links/social-links";
+import SocialLinks from "@/components/general-use/social-links";
 import StyledButton from "@/components/UI/styled-button/styled-button";
 
 import { User, Session } from "lucia";

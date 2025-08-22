@@ -1,4 +1,4 @@
-import Section from "@/components/general-use/section/section";
+import Section from "@/components/general-use/section";
 import Input from "@/components/UI/input/input";
 import changePassword from "@/actions/change-pass";
 import { ChangePassFormValues } from "@/actions/change-pass";
