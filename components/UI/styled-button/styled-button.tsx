@@ -35,6 +35,7 @@ export default function StyledButton(
     const { href, ...linkProps } = props;
     return (
       <motion.p
+        className="styled-button"
         whileHover={{ scale: 1.1 }}
         transition={{ type: "spring", stiffness: 500 }}
       >
@@ -51,6 +52,7 @@ export default function StyledButton(
     const { ...buttonProps } = props;
     return (
       <motion.p
+        className="styled-button"
         whileHover={{ scale: 1.1 }}
         transition={{ type: "spring", stiffness: 500 }}
       >

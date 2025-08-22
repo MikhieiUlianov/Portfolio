@@ -8,6 +8,7 @@ import ChangePassModal from "./change-pass";
 import classes from "./modal-handler.module.scss";
 import ModalBackdrop from "./modal-backdrop";
 import CloseIcon from "../icons/close-icon";
+import RegistrationRequired from "./registration-required";
 
 export default function ModalHandler() {
   const searchParams = useSearchParams();
@@ -30,6 +31,8 @@ export default function ModalHandler() {
     if (activeSigment === "signup") return <SignUpModal />;
     if (activeSigment === "login") return <LogInModal />;
     if (activeSigment === "change-password") return <ChangePassModal />;
+    if (activeSigment === "registration-required")
+      return <RegistrationRequired />;
     return null;
   }
   function handleClose() {

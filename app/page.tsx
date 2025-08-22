@@ -1,6 +1,6 @@
 import Promo from "@/components/main-page/promo";
 import Resume from "@/components/main-page/resume";
-import Skills from "@/components/skills";
+import Skills from "@/components/skills/skills-list";
 import Contacts from "@/components/main-page/contacts";
 import Portfolio from "@/components/main-page/portfolio";
 import About from "@/components/main-page/about";

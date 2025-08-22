@@ -1,8 +1,8 @@
 import classes from "./skills.module.scss";
-import { skillsItems } from "../SideData";
-import Section from "../general-use/section";
-import SkillItem from "./skill-item";
-import StyledButton from "../UI/styled-button/styled-button";
+import { skillsItems } from "../../SideData";
+import Section from "../../general-use/section";
+import SkillItem from "../skill-item";
+import StyledButton from "../../UI/styled-button/styled-button";
 
 export default function Skills() {
   const skills = skillsItems.splice(0, 3);

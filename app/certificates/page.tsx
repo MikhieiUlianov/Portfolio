@@ -16,7 +16,7 @@ export default async function CertificatesPage() {
   const certificates = certificatesItems;
 
   const result = await verifyAuth();
-  if (!result.user) redirect("/");
+  if (!result.user) redirect("/?modal=registration-required");
   return (
     <Section sectionClass={classes.certificates}>
       <ul>

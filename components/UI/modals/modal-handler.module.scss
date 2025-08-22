@@ -8,6 +8,7 @@
   padding: 20px;
   border-radius: 8px;
   width: 80%;
+  min-height: 200px;
   .close {
     width: 25px;
     height: 25px;
@@ -16,6 +17,7 @@
     cursor: pointer;
   }
   h2 {
+    margin-top: 15px;
     font-weight: 700;
     font-size: 20px;
     text-align: center;
