@@ -9,7 +9,7 @@ export default function Contacts() {
     <Section sectionClass={classes.contacts}>
       <div className={classes.wrapper}>
         <div className={classes.photo}>
-          <Image src="/img/Photo.jpeg" alt="photo" fill />
+          <Image src="/img/photos/form-photo.jpg" alt="photo" fill />
         </div>
 
         <div className={classes.descr}>

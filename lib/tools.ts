@@ -15,8 +15,6 @@ export type ToolFileType = ToolMetaData & {
   content: string;
 };
 
-/*  fs.readdirSync() works only with directories (folders),
- and it returns an array of names of the entries inside that directory. */
 export function getAllToolsFiles(): string[] {
   return fs.readdirSync(toolsPath);
 }

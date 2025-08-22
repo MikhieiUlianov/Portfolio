@@ -1,7 +1,6 @@
 import htmlIcon from "../public/icons/coding/html5.svg";
 import cssIcon from "../public/icons/coding/css3.svg";
 import jsIcon from "../public/icons/coding/java-script.svg";
-import python from "../public/icons/coding/python.svg";
 import reactIcon from "../public/icons/coding/react.svg";
 import nodeIcon from "../public/icons/coding/node-js.svg";
 import mongoIcon from "../public/icons/coding/mongo-db.svg";
@@ -127,14 +126,6 @@ export const skillsItems = [
     title: "Java Script",
     description:
       "This programming language allows you to animate anything: sliders, windows, tooltips, tabs, receiving data from the server and much more.",
-  },
-  {
-    date: "2024-10-20",
-    img: python,
-    alt: "Python",
-    title: "Python",
-    description:
-      "A versatile programming language popular for backend development, data analysis, automation, and more.",
   },
   {
     date: "2025-05-03",

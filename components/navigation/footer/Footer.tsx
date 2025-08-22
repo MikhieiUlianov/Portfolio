@@ -39,6 +39,10 @@ export default function Footer() {
         <h2>Social:</h2>
         <SocialLinks />
       </div>
+      <div className={classes.email}>
+        <span>Email:</span>
+        <a href="mailto:>mikhieiulianov@gmail.com">mikhieiulianov@gmail.com</a>
+      </div>
     </section>
   );
 }

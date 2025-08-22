@@ -13,6 +13,15 @@
     margin: 20px auto;
     border-radius: 6px;
   }
+  .email {
+    font-size: 16px;
+    text-align: center;
+    margin-top: 15px;
+    font-weight: 600;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
 
   .subscribe {
     min-height: 305px;
@@ -98,7 +107,9 @@
     .nav {
       flex-direction: row;
     }
-
+    .email {
+      font-size: 18px;
+    }
     .subscribe {
       &Title {
         font-size: 26px;

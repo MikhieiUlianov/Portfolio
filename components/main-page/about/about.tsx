@@ -11,7 +11,7 @@ export default function About() {
       <div className={classes.wrapper}>
         <div className={classes.photo}>
           <Image
-            src="/img/Photo.jpeg"
+            src="/img/photos/about-photo.jpg"
             alt="Some of my photo"
             fill
             style={{ objectFit: "cover" }}
