@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Section from "../../general-use/section/section";
 import classes from "./contacts.module.scss";
-import SocialLinks from "@/components/navigation/social-links/social-links";
+import SocialLinks from "@/components/social-links/social-links";
 import ContactsForm from "./contacts-form";
 
 export default function Contacts() {

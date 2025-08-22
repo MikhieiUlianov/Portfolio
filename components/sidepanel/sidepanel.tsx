@@ -1,5 +1,4 @@
 import classes from "./sidepanel.module.scss";
-import "../../../sass/libs/fontello.css";
 import SocialLinks from "../social-links/social-links";
 
 export default function SidePanel() {

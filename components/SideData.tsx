@@ -16,13 +16,6 @@ import coursesIcon from "../public/icons/advantages/Courses.svg";
 import developerIcon from "../public/icons/advantages/Developer.svg";
 import designerIcon from "../public/icons/advantages/designer.svg";
 
-import macaronShopImg from "../public/img/projects/macaronShop.svg";
-import pulseImg from "../public/img/projects/pulse.jpeg";
-import certificateIng from "../public/img/projects/certificate.jpg";
-import marvelImg from "../public/img/projects/marvel.jpeg";
-import ipadImg from "../public/img/projects/ipad.jpeg";
-import tocarImg from "../public/img/projects/tocar.svg";
-
 import reactCert from "../public/img/certificates/react-the-complete-guide-incl-redux.jpg";
 import nextJsCert from "../public/img/certificates/nextjs-react-the-complete-guide.jpg";
 import webDevCert from "../public/img/certificates/webdeveloper.jpg";
@@ -177,34 +170,6 @@ export const skillsRatings = [
   { title: "Soft skills", percent: 95 },
 ];
 
-export const portfolioItems = [
-  {
-    href: "https://github.com/MikhieiUlianov/macaron_shop",
-    img: macaronShopImg,
-    alt: "Macaron shop",
-    className: "",
-  },
-  { href: "#", img: pulseImg, alt: "pulse", className: "" },
-  {
-    href: "https://github.com/MikhieiUlianov/ReactMentoring",
-    img: certificateIng,
-    alt: "React mentoring project",
-    className: "",
-  },
-  {
-    href: "https://github.com/MikhieiUlianov/MarvelProject",
-    img: marvelImg,
-    alt: "Marvel project",
-    className: "vertical",
-  },
-  { href: "#", img: ipadImg, alt: "ipad", className: "" },
-  {
-    href: "https://github.com/MikhieiUlianov/Tokar",
-    img: tocarImg,
-    alt: "Tocar company",
-    className: "horizontal",
-  },
-];
 export const toolsFiltersBlocks = [
   {
     label: "Programming Languages",
