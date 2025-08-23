@@ -6,8 +6,6 @@ import Menu from "@/components/navigation/menu";
 import SidePanel from "../components/navigation/sidepanel";
 import ReduxProvider from "@/store/redux-provider";
 import ModalHandler from "@/components/UI/modals/modal-handler";
-import { verifyAuth } from "@/lib/auth";
-import { User, Session } from "lucia";
 import Footer from "../components/navigation/footer";
 import { Suspense } from "react";
 import Loading from "./my-tools/loading";
@@ -26,20 +24,12 @@ export default async function RootLayout({
 }: Readonly<{
   children: ReactNode;
 }>) {
-  let isLogged:
-    | { user: User; session: Session }
-    | { user: null; session: null } = { user: null, session: null };
-  try {
-    if (process.env.NEXT_PHASE !== "phase-production-build") {
-      isLogged = await verifyAuth();
-    }
-  } catch {}
   return (
     <html lang="en">
       <body>
         <ReduxProvider>
           <Header />
-          <Menu isLogged={isLogged} />
+          <Menu />
           <SidePanel />
           <Suspense fallback={<Loading />}>
             <ModalHandler />
