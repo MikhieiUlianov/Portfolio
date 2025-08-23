@@ -21,7 +21,7 @@ export async function subscribe({
   }
 
   try {
-    subscribeNewsletters(email);
+    await subscribeNewsletters(email);
   } catch (err: any) {
     if (err.message.includes("UNIQUE constraint failed")) {
       return {

@@ -57,12 +57,12 @@ export async function signup(
 
   const hashedPassword = await hashPassword(password);
   try {
-    const insertedUserId = createUser(email, hashedPassword, name);
-    await createAuthSession(insertedUserId.toString());
+    const result = await createUser(email, hashedPassword, name);
+    await createAuthSession(result._id);
     return { success: true };
   } catch (error) {
-    const err = error as { code?: string };
-    if (err.code === "SQLITE_CONSTRAINT_UNIQUE") {
+    const err = error as { code?: number };
+    if (err.code === 11000) {
       return {
         success: false,
         errors: {

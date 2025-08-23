@@ -41,7 +41,7 @@ export async function saveContacts({
     };
   }
   try {
-    storeData(email, name, message);
+    await storeData(email, name, message);
   } catch {
     throw new Error("Something went wrong.");
   }

@@ -1,7 +1,12 @@
-import db from "./db";
+import { connectToDatabase, insertDocument } from "./db";
 
-export function storeData(email: string, name: string, message: string) {
-  db.prepare(
-    `INSERT INTO contacts (email, name, message) VALUES (?, ?, ?)`
-  ).run(email, name, message);
+export async function storeData(email: string, name: string, message: string) {
+  const client = await connectToDatabase();
+
+  const result = await insertDocument(client, "contacts", {
+    email,
+    name,
+    message,
+  });
+  return result;
 }

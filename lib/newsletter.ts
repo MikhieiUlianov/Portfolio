@@ -1,5 +1,9 @@
-import db from "./db";
+import { connectToDatabase, insertDocument } from "./db";
 
-export function subscribeNewsletters(email: string) {
-  db.prepare(`INSERT INTO newsletters (email) VALUES (?)`).run(email);
+export async function subscribeNewsletters(email: string) {
+  const client = await connectToDatabase();
+
+  const result = insertDocument(client, "newsletters", { email });
+
+  return result;
 }

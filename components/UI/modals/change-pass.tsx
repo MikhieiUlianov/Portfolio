@@ -8,7 +8,7 @@ export default function ChangePassModal() {
   return (
     <Section>
       <h2>Change password</h2>
-      <h3>Chnage your password to for your account!</h3>
+      <h3>Change password for your account!</h3>
 
       <FormTempl<ChangePassFormValues>
         redirectPath="/"

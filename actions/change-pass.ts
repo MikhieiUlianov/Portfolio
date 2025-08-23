@@ -14,12 +14,9 @@ export default async function changePassword(
 ): Promise<RegistrationResult> {
   const { email, oldPassword, newPassword } = formData;
 
-  const user = getUserByEmail(email) as {
-    password: string;
-    email: string;
-  };
+  const mongoUser = await getUserByEmail(email);
 
-  if (!user) {
+  if (!mongoUser) {
     return {
       success: false,
       errors: {
@@ -28,6 +25,11 @@ export default async function changePassword(
     };
   }
 
+  const user = {
+    email: mongoUser.email,
+    password: mongoUser.password,
+    id: mongoUser._id.toString(),
+  };
   const isOldPassword = await verifyPassword(user.password, oldPassword);
 
   if (!isOldPassword) {

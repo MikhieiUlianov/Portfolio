@@ -9,11 +9,13 @@ import classes from "./modal-handler.module.scss";
 import ModalBackdrop from "./modal-backdrop";
 import CloseIcon from "../icons/close-icon";
 import RegistrationRequired from "./registration-required";
+import { useRedirectCancel } from "@/utils/redirect-cance";
 
 export default function ModalHandler() {
   const searchParams = useSearchParams();
   const activeSigment = searchParams.get("modal");
   const router = useRouter();
+  const { cancelRedirect } = useRedirectCancel();
 
   const modalRef = useRef<HTMLDialogElement>(null);
 
@@ -37,6 +39,7 @@ export default function ModalHandler() {
   }
   function handleClose() {
     modalRef.current?.close();
+    cancelRedirect();
     router.push(window.location.pathname, { scroll: false });
   }
   return (

@@ -1,19 +1,35 @@
-import db from "./db";
+import { randomUUID } from "crypto";
+import {
+  connectToDatabase,
+  findOne,
+  insertDocument,
+  updateUsersPassword,
+} from "./db";
 
-export function createUser(email: string, password: string, name: string) {
-  const result = db
-    .prepare(`INSERT INTO users (email, password, name) VALUES (?, ?, ?)`)
-    .run(email, password, name);
+const client = await connectToDatabase();
 
-  return result.lastInsertRowid;
+export async function createUser(
+  email: string,
+  password: string,
+  name: string
+) {
+  const userId = randomUUID();
+  await insertDocument(client, "users", {
+    _id: userId,
+    email,
+    password,
+    name,
+  });
+  return { _id: userId, email, password, name };
 }
 
-export function getUserByEmail(email: string) {
-  return db.prepare(`SELECT * FROM users WHERE email = ?`).get(email);
+export async function getUserByEmail(email: string) {
+  const result = await findOne(client, email, "users");
+  return result;
 }
 
-export function updatePassword(password: string, email: string) {
-  return db
-    .prepare(`UPDATE users SET password = ? WHERE email = ?`)
-    .run(password, email);
+export async function updatePassword(password: string, email: string) {
+  const result = await updateUsersPassword(client, email, password, "users");
+
+  return result;
 }

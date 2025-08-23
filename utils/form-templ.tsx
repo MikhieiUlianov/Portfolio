@@ -3,7 +3,7 @@
 import StyledButton from "@/components/UI/styled-button/styled-button";
 import { useForm, FieldValues, Path } from "react-hook-form";
 import { ReactNode, useState } from "react";
-import { useRouter } from "next/navigation";
+import { useRedirectCancel } from "./redirect-cance";
 
 export type RegistrationResult = {
   success: boolean;
@@ -28,7 +28,7 @@ export default function formTempl<TFormData extends FieldValues>({
   const [isError, setIsError] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
-  const router = useRouter();
+  const { redirectWithDelay } = useRedirectCancel();
 
   const methods = useForm<TFormData>();
   const { handleSubmit, reset, setError } = methods;
@@ -50,9 +50,7 @@ export default function formTempl<TFormData extends FieldValues>({
       });
     } else if (result.success) {
       reset();
-      if (redirectPath) {
-        setTimeout(() => router.push(redirectPath), 5000);
-      }
+      redirectWithDelay(redirectPath, 5000);
     }
 
     setIsLoading(false);

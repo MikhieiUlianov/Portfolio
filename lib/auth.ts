@@ -1,12 +1,16 @@
-import { BetterSqlite3Adapter } from "@lucia-auth/adapter-sqlite";
 import { Lucia } from "lucia";
-import db from "./db";
-import { cookies } from "next/headers";
+import { MongodbAdapter } from "@lucia-auth/adapter-mongodb";
 
-const adapter = new BetterSqlite3Adapter(db, {
-  session: "sessions",
-  user: "users",
-});
+import { connectToDatabase } from "./db";
+import { cookies } from "next/headers";
+const client = await connectToDatabase();
+
+const db = client.db();
+
+const adapter = new MongodbAdapter(
+  db.collection("sessions"),
+  db.collection("users")
+);
 declare module "lucia" {
   interface Register {
     Lucia: typeof lucia;

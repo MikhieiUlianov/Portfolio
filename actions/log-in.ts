@@ -17,14 +17,9 @@ export async function login(
   const email = formData.email;
   const password = formData.password;
 
-  const existingUser = getUserByEmail(email) as {
-    email: string;
-    name: string;
-    password: string;
-    id: string;
-  };
+  const mongoUser = await getUserByEmail(email);
 
-  if (!existingUser) {
+  if (!mongoUser) {
     return {
       success: false,
       errors: {
@@ -32,6 +27,13 @@ export async function login(
       },
     };
   }
+
+  const existingUser = {
+    email: mongoUser.email,
+    name: mongoUser.name,
+    password: mongoUser.password,
+    id: mongoUser._id.toString(),
+  };
 
   const isValidPassword = await verifyPassword(existingUser.password, password);
 
@@ -44,6 +46,6 @@ export async function login(
     };
   }
 
-  await createAuthSession(existingUser.id.toString());
+  await createAuthSession(existingUser.id);
   return { success: true };
 }
