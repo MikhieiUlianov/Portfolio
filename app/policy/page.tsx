@@ -1,5 +1,12 @@
 import styles from "./policy.module.scss";
 
+export const dynamic = "force-static";
+
+export const metadata = {
+  title: "Privacy Policy",
+  description: "A page with privacy policy information.",
+};
+
 export default function PrivacyPolicy() {
   return (
     <section className={styles.policySection}>

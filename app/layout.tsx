@@ -9,6 +9,8 @@ import ModalHandler from "@/components/UI/modals/modal-handler";
 import { verifyAuth } from "@/lib/auth";
 import { User, Session } from "lucia";
 import Footer from "../components/navigation/footer";
+import { Suspense } from "react";
+import Loading from "./my-tools/loading";
 
 export const metadata: Metadata = {
   title: "My portfolio",
@@ -24,9 +26,12 @@ export default async function RootLayout({
 }: Readonly<{
   children: ReactNode;
 }>) {
-  const isLogged:
+  let isLogged:
     | { user: User; session: Session }
-    | { user: null; session: null } = await verifyAuth();
+    | { user: null; session: null } = { user: null, session: null };
+  try {
+    isLogged = await verifyAuth();
+  } catch {}
   return (
     <html lang="en">
       <body>
@@ -34,7 +39,9 @@ export default async function RootLayout({
           <Header />
           <Menu isLogged={isLogged} />
           <SidePanel />
-          <ModalHandler />
+          <Suspense fallback={<Loading />}>
+            <ModalHandler />
+          </Suspense>
           {children}
           <Footer />
         </ReduxProvider>

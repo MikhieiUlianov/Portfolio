@@ -1,4 +1,4 @@
-import StyledButton from "@/components/UI/styled-button/styled-button";
+import Link from "next/link";
 
 export const metadata = {
   title: "Not Found",
@@ -8,9 +8,9 @@ export default function NotFound() {
     <main className="not-found">
       <h1>Not Found!</h1>
       <p>Unfortunately, we could not find the requested page or resource.</p>
-      <StyledButton className="margin margin-bottom" href="../">
+      <Link className="margin margin-bottom" href="../">
         Go Back
-      </StyledButton>
+      </Link>
     </main>
   );
 }

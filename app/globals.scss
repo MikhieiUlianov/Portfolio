@@ -154,6 +154,32 @@ button {
   font-weight: 500;
   color: #ddd8d8;
 }
+
+.not-found {
+  a {
+    margin-left: auto;
+    margin-right: auto;
+    background: $orange;
+    border-radius: 5px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
+    padding: 12px 25px;
+    color: rgb(0, 0, 0);
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 21px;
+    text-align: center;
+    width: 135px;
+    min-height: 45px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    transition: all 0.5s;
+    max-width: 300px;
+    &:disabled {
+      background: rgb(225, 133, 5);
+    }
+  }
+}
 .margin {
   margin-top: 25px;
 }
