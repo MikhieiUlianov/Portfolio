@@ -30,7 +30,9 @@ export default async function RootLayout({
     | { user: User; session: Session }
     | { user: null; session: null } = { user: null, session: null };
   try {
-    isLogged = await verifyAuth();
+    if (process.env.NEXT_PHASE !== "phase-production-build") {
+      isLogged = await verifyAuth();
+    }
   } catch {}
   return (
     <html lang="en">
