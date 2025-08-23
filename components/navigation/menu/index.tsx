@@ -7,27 +7,13 @@ import CloseIcon from "@/components/UI/icons/close-icon";
 import SocialLinks from "@/components/general-use/social-links";
 import StyledButton from "@/components/UI/styled-button/styled-button";
 import { User } from "lucia";
-import { Session } from "inspector/promises";
 
-export default function Menu() {
+export default function Menu({ isLogged }: { isLogged: User | null }) {
   const [active, setActive] = useState(false);
-  const [isLogged, setIsLogged] = useState<
-    { user: User; session: Session } | { user: null; session: null }
-  >({ user: null, session: null });
-
-  useEffect(() => {
-    fetch("/api/me")
-      .then((res) => res.json())
-      .then((data) => setIsLogged(data))
-      .catch(() => setIsLogged({ user: null, session: null }));
-  }, []);
 
   return (
     <div>
-      <div
-        className={classes.hamburger}
-        onClick={() => setActive((prev) => !prev)}
-      >
+      <div className={classes.hamburger} onClick={() => setActive(!active)}>
         <span></span>
         <span className="long"></span>
         <span></span>
@@ -54,7 +40,7 @@ export default function Menu() {
           </nav>
 
           <div className={classes.modalActions}>
-            {isLogged?.user ? (
+            {isLogged ? (
               <StyledButton href="/?modal=change-password">
                 Change Password
               </StyledButton>

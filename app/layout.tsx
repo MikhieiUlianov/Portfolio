@@ -9,6 +9,7 @@ import ModalHandler from "@/components/UI/modals/modal-handler";
 import Footer from "../components/navigation/footer";
 import { Suspense } from "react";
 import Loading from "./my-tools/loading";
+import MenuWrapper from "@/components/menu-wrapper";
 
 export const metadata: Metadata = {
   title: "My portfolio",
@@ -29,7 +30,7 @@ export default async function RootLayout({
       <body>
         <ReduxProvider>
           <Header />
-          <Menu />
+          <MenuWrapper />
           <SidePanel />
           <Suspense fallback={<Loading />}>
             <ModalHandler />
