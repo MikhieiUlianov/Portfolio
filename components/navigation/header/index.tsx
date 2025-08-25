@@ -6,8 +6,16 @@ import { verifyAuth } from "@/lib/auth";
 import logout from "@/actions/log-out";
 
 export default async function Header() {
-  const accountExists = await verifyAuth();
+  let accountExists: { user: any; session: any } = {
+    user: null,
+    session: null,
+  };
 
+  try {
+    accountExists = await verifyAuth();
+  } catch (e) {
+    accountExists = { user: null, session: null };
+  }
   return (
     <div className={classes.header}>
       <div className={classes.wrapper}>
@@ -15,7 +23,6 @@ export default async function Header() {
           <StyledButton href="/">Go To Main</StyledButton>
           <StyledButton href="/my-projects">My Projects</StyledButton>
         </div>
-
         <Link href="/">
           <Image
             width={100}
@@ -26,6 +33,9 @@ export default async function Header() {
           />
         </Link>
 
+        {accountExists.user && (
+          <div className={classes.mobileName}>{accountExists.user.name}</div>
+        )}
         <div className={classes.desktop}>
           {accountExists.user ? (
             <div className={classes.logged}>

@@ -13,6 +13,10 @@
   .desktop {
     display: none;
   }
+  .mobileName {
+    margin-right: 50%;
+    transform: translateX(50%);
+  }
 
   .find {
     display: none;
@@ -79,7 +83,9 @@
       padding: 21px 104px 21px 104px;
       height: 90px;
     }
-
+    .mobileName {
+      display: none;
+    }
     .find {
       display: flex;
       flex-direction: row;

@@ -7,6 +7,7 @@ import CloseIcon from "@/components/UI/icons/close-icon";
 import SocialLinks from "@/components/general-use/social-links";
 import StyledButton from "@/components/UI/styled-button/styled-button";
 import { User } from "lucia";
+import logout from "@/actions/log-out";
 
 export default function Menu({ isLogged }: { isLogged: User | null }) {
   const [active, setActive] = useState(false);
@@ -41,9 +42,14 @@ export default function Menu({ isLogged }: { isLogged: User | null }) {
 
           <div className={classes.modalActions}>
             {isLogged ? (
-              <StyledButton href="/?modal=change-password">
-                Change Password
-              </StyledButton>
+              <>
+                <StyledButton href="/?modal=change-password">
+                  Change Password
+                </StyledButton>
+                <form action={logout} onClick={() => setActive(false)}>
+                  <StyledButton>Logout</StyledButton>
+                </form>
+              </>
             ) : (
               <>
                 <StyledButton href="/?modal=login">Log In</StyledButton>

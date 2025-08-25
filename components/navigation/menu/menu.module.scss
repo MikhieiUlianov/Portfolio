@@ -51,14 +51,15 @@
     z-index: 100000;
   }
   .modalActions {
-    margin: 20px 0 100px 0;
+    margin: 20px 100% 100px 0;
     padding-left: 30px;
     display: flex;
     flex-direction: column;
     gap: 15px;
     justify-content: flex-start;
     align-items: flex-start;
-    a {
+    a,
+    button {
       background: black;
       color: white;
     }

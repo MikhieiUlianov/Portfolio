@@ -48,7 +48,7 @@
     grid-template-columns: 1fr;
     grid-template-rows: 45px 45px 190px minmax(45px, auto);
     justify-content: space-between;
-    row-gap: 27px;
+    row-gap: 35px;
 
     label {
       display: block;
@@ -69,34 +69,16 @@
     text-align: left;
   }
   .triggers {
-    grid-column: 1 / -1;
-    display: grid;
-    grid-template-columns: 1fr;
-    column-gap: 0;
     row-gap: 20px;
     margin-top: 20px;
-  }
 
-  .policy {
-    font-size: 12px;
-    line-height: 14px;
-    display: flex;
     align-items: center;
-    width: 180px;
-    margin: 0 auto;
-  }
-
-  .input {
-    position: relative;
-
-    input {
-      width: 100%;
-      height: 100%;
-      padding: 0 20px;
-      font-size: 12px;
+    div {
+      justify-content: center;
+      text-align: center;
+      margin-top: 7px;
     }
   }
-
   .textarea {
     position: relative;
     grid-column: 1 / -1;
@@ -209,7 +191,9 @@
       grid-template-columns: 400px 1fr;
       gap: 50px;
     }
-
+    .truggers {
+      justify-content: flex-start;
+    }
     .form {
       grid-template-columns: repeat(2, 1fr);
     }
