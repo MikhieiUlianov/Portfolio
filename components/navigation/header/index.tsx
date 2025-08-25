@@ -4,9 +4,12 @@ import Link from "next/link";
 import Image from "next/image";
 import { verifyAuth } from "@/lib/auth";
 import logout from "@/actions/log-out";
+import { User, Session } from "lucia";
 
 export default async function Header() {
-  let accountExists: { user: any; session: any } = {
+  let accountExists:
+    | { user: User; session: Session }
+    | { user: null; session: null } = {
     user: null,
     session: null,
   };

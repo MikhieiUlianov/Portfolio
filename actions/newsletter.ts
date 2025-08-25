@@ -2,6 +2,7 @@
 
 import { subscribeNewsletters } from "@/lib/newsletter";
 import { RegistrationResult } from "@/utils/form-templ";
+import { MongoServerError } from "mongodb";
 
 export async function subscribe({
   email,
@@ -22,8 +23,8 @@ export async function subscribe({
 
   try {
     await subscribeNewsletters(email);
-  } catch (err: any) {
-    if (err.message.includes("UNIQUE constraint failed")) {
+  } catch (err: unknown) {
+    if (err instanceof MongoServerError && err.code === 11000) {
       return {
         success: false,
         errors: { email: "This email is already subscribed." },
