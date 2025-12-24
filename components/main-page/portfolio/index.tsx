@@ -16,6 +16,8 @@ export default function Portfolio() {
   const { repos } = useSelector((state: RootState) => state.projects);
 
   useEffect(() => {
+    if (repos.length > 0) return;
+
     async function getRepos() {
       dispatch(setLoading(true));
       try {
@@ -31,7 +33,7 @@ export default function Portfolio() {
     }
 
     getRepos();
-  }, [dispatch]);
+  }, [dispatch, repos.length]);
 
   return (
     <Section sectionClass={classes.portfolio}>

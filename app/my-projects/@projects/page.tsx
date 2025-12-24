@@ -20,6 +20,8 @@ export default function MyProjectsList() {
   const dispatch = useDispatch();
 
   useEffect(() => {
+    if (page === 1 && repos.length > 0) return;
+
     async function getRepos() {
       dispatch(setLoading(true));
       try {
@@ -35,7 +37,7 @@ export default function MyProjectsList() {
     }
 
     getRepos();
-  }, [page, dispatch]);
+  }, [page, dispatch, repos.length]);
 
   return (
     <ListTemplate
